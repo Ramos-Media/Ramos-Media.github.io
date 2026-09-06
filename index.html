@@ -2,124 +2,175 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,inital-scale=1">
-    <title>Ramos Media - Home</title>
-    <link rel="stylesheet" href="style_home.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ramos Media is the portfolio of photographer and digital media creator Andrew Ramos, featuring outdoor photography, video editing, videography, and photo editing.">
+    <meta name="theme-color" content="#252525">
+    <title>Ramos Media | Photography and Digital Media</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Sono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style_home.css">
   </head>
-  
- <body>
-   <a id="top"></a>
-   
- <header>
-   <div class="dropdown">
-     <nav>
-        <input type="image" src="assets/menu.png" alt="Menu Button" >
-           <div class="dropdown-content">
-               <a href="index.html"><b>Home</b></a>
-               <a href="portfolio.html">Portfolio</a>
-               <a href="services.html">Services</a>
-           </div>
-     </nav>
-  </div>
-    <img src="assets/logo2.png" alt="logo" id="logo">
- </header>
 
-<br>
-<br>   
-<br>  
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<section>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Ramos Media home">
+        <img src="assets/logo2.png" alt="Ramos Media" id="logo">
+      </a>
 
-  <aside>
-  <figure class="floatright">
-    <figcaption >Andrew</figcaption>
-				  <picture class="portrait">
-            <source media="(min-width:2000px)" srcset="assets/homepage/portrait/portrait-500.jpg">
-            <source media="(min-width:1200px)" srcset="assets/homepage/portrait/portrait-300.jpg">
-					  <source media="(min-width:992px)" srcset="assets/homepage/portrait/portrait-200.jpg">
-					  <img src="assets/homepage/portrait/portrait-150.jpg" alt="Photograph of Andrew">
+      <details class="mobile-menu">
+        <summary aria-label="Open navigation menu">
+          <img src="assets/menu.png" alt="">
+          <span>Menu</span>
+        </summary>
+        <nav aria-label="Mobile navigation">
+          <a href="index.html" aria-current="page">Home</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="services.html">Services</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </details>
+
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="services.html">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <p class="eyebrow">Andrew Ramos | Ramos Media</p>
+          <h1 id="hero-title">Photography built around adventure and genuine moments.</h1>
+          <p class="hero-intro">
+            Outdoor, action, landscape, and lifestyle photography from a digital media creator based in Rexburg, Idaho.
+          </p>
+          <div class="button-group">
+            <a class="button button-primary" href="photopage.html">Explore My Photography</a>
+            <a class="button button-secondary" href="#contact">Work With Me</a>
+          </div>
+        </div>
+        <a class="scroll-cue" href="#featured" aria-label="Continue to featured photography">
+          <span>Featured work</span>
+          <span aria-hidden="true">↓</span>
+        </a>
+      </section>
+
+      <section class="section section-dark" id="featured" aria-labelledby="featured-title">
+        <div class="section-heading">
+          <p class="eyebrow">Primary Focus</p>
+          <h2 id="featured-title">Photography</h2>
+          <p>
+            I create photographs that capture movement, atmosphere, and a strong sense of place, with a special focus on outdoor adventures and action sports.
+          </p>
+        </div>
+
+        <a class="feature-card" href="photopage.html">
+          <img src="assets/homepage/services/photogear.jpg" alt="Camera equipment used for Ramos Media photography">
+          <span class="feature-card-content">
+            <span class="card-kicker">Selected portfolio</span>
+            <span class="card-title">See the world through my lens</span>
+            <span class="card-link">View Photography <span aria-hidden="true">→</span></span>
+          </span>
+        </a>
+      </section>
+
+      <section class="section section-panel" aria-labelledby="capabilities-title">
+        <div class="section-heading">
+          <p class="eyebrow">More Capabilities</p>
+          <h2 id="capabilities-title">From capture to final edit</h2>
+          <p>
+            Alongside photography, I offer editing and production services that bring stories together across images and video.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card service-card-featured">
+            <img src="assets/homepage/services/videogear.jpg" alt="Video editing and production equipment" loading="lazy">
+            <div class="service-card-content">
+              <span class="service-number">01</span>
+              <h3>Video Editing</h3>
+              <p>Thoughtful pacing, music, color, and storytelling shaped into a polished final video.</p>
+              <a href="videopage.html">View Video Work <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img src="assets/homepage/services/videogear.jpg" alt="Camera gear used for on-location video production" loading="lazy">
+            <div class="service-card-content">
+              <span class="service-number">02</span>
+              <h3>Videography</h3>
+              <p>On-location footage that captures action, environments, experiences, and authentic moments.</p>
+              <a href="videopage.html">Explore Videography <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img src="assets/homepage/services/photorestorations.jpg" alt="Photograph being restored and edited in Adobe Photoshop" loading="lazy">
+            <div class="service-card-content">
+              <span class="service-number">03</span>
+              <h3>Photo Editing</h3>
+              <p>Detailed Photoshop work, creative edits, color correction, and restoration of damaged photographs.</p>
+              <a href="restorationpage.html">View Editing Work <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section about" aria-labelledby="about-title">
+        <div class="about-portrait">
+          <picture>
+            <source media="(min-width: 1200px)" srcset="assets/homepage/portrait/portrait-500.jpg">
+            <source media="(min-width: 700px)" srcset="assets/homepage/portrait/portrait-300.jpg">
+            <img src="assets/homepage/portrait/portrait-200.jpg" alt="Portrait of photographer Andrew Ramos" width="500" height="500" loading="lazy">
           </picture>
-      </figure>
-  </aside>
-  
-   <h2 > About Me</h2>
-      <p>
-        Hello, my name is Andrew Ramos. I am 24 years old, and I am currently based in Rexburg, Idaho. My passion for digital media began when I was in elementary school and I wanted to make fun, short movies with my friends. I began taking digital media classes in middle school where I took two years of Photoshop and video editing classes. I continued my education by taking three years of video editing classes in high school, and two years of Digital Media studies at the Santa Rosa Junior College. Currently I am enrolled at BYUI-Idaho, working on a degree in Interdisciplinary Studies. So far I have taken a variety of digital media classes, including Adobe Photoshop, Drone Piloting and Imaging, Video Production, and more. I enjoy editing and producing videos capturing my hobbies and adventures, especially the trips I go on. On these trips, I like capturing interesting and new perspectives utilizing action cameras, DSLR cameras, and drones. Recently, I have gotten a lot more into photography after purchasing some nicer camera equipment. In my free time, I love to backpack, mountain bike, camp, airsoft, play video games, hike, work out, overland, and hang out with my friends.  
-      </p>
+        </div>
 
-<br>
-      <p class="statement">
-        Throughout my many years of experience in the world of producing digital media, I have learned relevant and important skills. Alongside my other jobs, I have learned to be a hard worker and organized. With my passion for digital media, I believe that I have what it takes to provide you with the variety of services that you may need. 
-      </p>
-  
-<br>
-<br> 
-<br>
-  
-<h2 class="textcenter roboto"> What I Offer</h2>
-</section>
+        <div class="about-content">
+          <p class="eyebrow">Behind the Camera</p>
+          <h2 id="about-title">Hi, I’m Andrew.</h2>
+          <p>
+            I’m a photographer and digital media creator based in Rexburg, Idaho. What began with making short movies as a kid grew into years of study and hands-on experience in photography, Photoshop, video production, and drone imaging.
+          </p>
+          <p>
+            I’m currently studying Interdisciplinary Studies at Brigham Young University-Idaho. My favorite work combines creativity with the outdoors, especially mountain biking, travel, landscapes, and the adventures that are worth remembering.
+          </p>
+          <div class="button-group">
+            <a class="button button-primary" href="portfolio.html">View Full Portfolio</a>
+            <a class="text-link" href="assets/homepage/resume/resume-full.jpg" target="_blank" rel="noopener noreferrer">View Résumé <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </section>
 
-<br> 
-   
-<div class="flexcontainer">
-  
-  <article class="left">
-    <h3 class="textunderline roboto"><a href="photopage.html" class="whitelink"> Photography and Photo Editing</a></h3>
-      <figure>
-					 <a href="photopage.html"> <img class="blueborder" src="assets/homepage/services/photogear.jpg" alt="Photography gear"> </a>
-        <figcaption>Photo Gear</figcaption>
-      </figure>
-  </article>
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div>
+          <p class="eyebrow">Let’s Create Something</p>
+          <h2 id="contact-title">Have a project or adventure in mind?</h2>
+          <p>Tell me what you’re planning and how you would like it captured.</p>
+        </div>
+        <a class="button button-light" href="mailto:andrewmramos9@gmail.com">Email Andrew</a>
+      </section>
+    </main>
 
-  <article class="middle">
-    <h3 class="textunderline roboto"><a href="videopage.html" class="whitelink"> Video Production and Editing</a></h3>
-      <figure>
-				  <a href="videopage.html"> <img class="blueborder" src="assets/homepage/services/videogear.jpg" alt="Video Production gear"> </a>
-        <figcaption>Video Production Gear</figcaption>
-      </figure>
-  </article>
- 
-  <article class="right">
-    <h3 class="textunderline roboto"><a href="restorationpage.html" class="whitelink"> Photo Restorations and Photoshop</a></h3>
-      <figure>
-					  <a href="restorationpage.html"> <img class="blueborder" src="assets/homepage/services/photorestorations.jpg" alt="Screenshot of restoring photographs in Photoshop"> </a>
-        <figcaption>Adobe Photoshop</figcaption>
-      </figure>
-  </article>
-  
-</div> 
+    <footer class="site-footer">
+      <div class="social-links" aria-label="Social media links">
+        <a href="https://www.instagram.com/andrew_r4mos/" target="_blank" rel="noopener noreferrer">
+          <img src="assets/smlogos/instagram.png" alt="Instagram" width="30" height="30">
+        </a>
+        <a href="https://www.youtube.com/channel/UC8VzyoBJ9tQY0sLvHmcyEqw" target="_blank" rel="noopener noreferrer">
+          <img src="assets/smlogos/youtube.png" alt="YouTube" width="30" height="30">
+        </a>
+        <a href="mailto:andrewmramos9@gmail.com">
+          <img src="assets/smlogos/gmail.png" alt="Email Andrew" width="30" height="30">
+        </a>
+      </div>
 
-<br>
-  
-   <h3>Resume</h3>
- <figure>
-    <figcaption>Resume</figcaption>
-				  <picture class="imagecenter">
-            <source media="(min-width:1300px)" srcset="assets/homepage/resume/resume-full.jpg">
-					  <source media="(min-width:1100px)" srcset="assets/homepage/resume/resume-1000.jpg">
-            <source media="(min-width:800px)" srcset="assets/homepage/resume/resume-800.jpg">
-					  <img src="assets/homepage/resume/resume-650.jpg" alt="Resume">
-          </picture>
-      </figure>
-
-<br> 
-    
-<footer>
-  <a class="floatleft" href="https://www.instagram.com/andrew_r4mos/" target="_blank"> <img src="assets/smlogos/instagram.png" alt="Instagram"></a>
-  <a class="floatleft" href="https://www.youtube.com/channel/UC8VzyoBJ9tQY0sLvHmcyEqw" target="_blank"> <img src="assets/smlogos/youtube.png" alt="Youtube"></a>
-  <a class="floatleft" href="mailto:andrewmramos9@gmail.com" target="_blank"> <img src="assets/smlogos/gmail.png" alt="Gmail"></a> 
-  <a id="uparrow" href="#top"> <img src="assets/arrow.png" alt="Jump to Top"></a>
-  
-    <p id="foot">
-      &#169;2026 Andrew Ramos &#9475; All assets provided by Andrew
-    </p>
-</footer>
-
-  
+      <p>&copy; 2026 Andrew Ramos | All assets provided by Andrew</p>
+      <a class="back-to-top" href="#main-content">Back to top <span aria-hidden="true">↑</span></a>
+    </footer>
   </body>
-</html> 
-
+</html>
