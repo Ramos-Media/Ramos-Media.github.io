@@ -193,7 +193,7 @@ summary:focus-visible {
   padding: calc(var(--header-height) + 60px) clamp(22px, 7vw, 100px) 80px;
   isolation: isolate;
   background-image:
-    linear-gradient(90deg, rgba(19, 19, 19, 0.92) 0%, rgba(19, 19, 19, 0.67) 55%, rgba(19, 19, 19, 0.3) 100%),
+    linear-gradient(90deg, rgba(19, 19, 19, 0.7) 0%, rgba(19, 19, 19, 0.42) 55%, rgba(19, 19, 19, 0.12) 100%),
     url("assets/homepage/home/homebackground-1000.jpg");
   background-position: center;
   background-size: cover;
@@ -613,7 +613,7 @@ h3 {
 @media (min-width: 700px) {
   .hero {
     background-image:
-      linear-gradient(90deg, rgba(19, 19, 19, 0.92) 0%, rgba(19, 19, 19, 0.62) 58%, rgba(19, 19, 19, 0.2) 100%),
+      linear-gradient(90deg, rgba(19, 19, 19, 0.7) 0%, rgba(19, 19, 19, 0.42) 55%, rgba(19, 19, 19, 0.12) 100%),
       url("assets/homepage/home/homebackground-2000.jpg");
   }
 
@@ -681,7 +681,7 @@ h3 {
 @media (min-width: 1800px) {
   .hero {
     background-image:
-      linear-gradient(90deg, rgba(19, 19, 19, 0.92) 0%, rgba(19, 19, 19, 0.58) 58%, rgba(19, 19, 19, 0.18) 100%),
+      linear-gradient(90deg, rgba(19, 19, 19, 0.7) 0%, rgba(19, 19, 19, 0.42) 55%, rgba(19, 19, 19, 0.12) 100%),
       url("assets/homepage/home/homebackground-full.jpg");
   }
 }
