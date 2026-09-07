@@ -1,195 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Photo restoration and editing services from Andrew Ramos of Ramos Media, including damage repair, color correction, retouching, object removal, colorization, and creative Photoshop editing.">
+    <meta name="theme-color" content="#252525">
+    <title>Photo Restoration and Editing | Ramos Media</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style_home.css">
+    <link rel="stylesheet" href="style_restorationpage.css">
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,inital-scale=1">
-  <title>Ramos Media - Photo Restorations and Photoshop</title>
-  <link rel="stylesheet" href="style_restorationpage.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Sono&display=swap" rel="stylesheet">
-</head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<body>
-  <a id="top"></a>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Ramos Media home">
+        <img src="assets/logo2.png" alt="Ramos Media" id="logo">
+      </a>
 
-  <header>
-    <div class="dropdown">
-      <nav>
-        <input type="image" src="assets/menu.png" alt="Menu Button">
-        <div class="dropdown-content">
+      <details class="mobile-menu">
+        <summary aria-label="Open navigation menu">
+          <img src="assets/menu.png" alt="">
+          <span>Menu</span>
+        </summary>
+        <nav aria-label="Mobile navigation">
           <a href="index.html">Home</a>
           <a href="portfolio.html">Portfolio</a>
-          <a href="services.html"><b>Services</b></a>
-        </div>
+          <a href="services.html" aria-current="page">Services</a>
+          <a href="services.html#quote">Contact</a>
+        </nav>
+      </details>
+
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="services.html" aria-current="page">Services</a>
+        <a href="services.html#quote">Contact</a>
       </nav>
-    </div>
-     <a href="index.html"> <img src="assets/logo2.png" alt="logo" id="logo"> </a>
-    <h1>Photo Restorations and Photoshop</h1>
-  </header>
+    </header>
 
+    <main id="main-content">
+      <section class="restoration-hero" aria-labelledby="page-title">
+        <div class="restoration-hero-content">
+          <p class="eyebrow">Ramos Media Restoration</p>
+          <h1 id="page-title">Bring meaningful photographs back to life.</h1>
+          <p>
+            Repair damage, restore faded color, and prepare treasured photographs to be shared, displayed, and preserved.
+          </p>
+          <div class="button-group">
+            <a class="button button-primary" href="#restoration-work">View Restoration Examples</a>
+            <a class="button button-secondary" href="services.html#quote">Request an Estimate</a>
+          </div>
+        </div>
+      </section>
 
-<br>
-<br>
-<br>
-  <h1 class="page_title">Photo Restorations and Photoshop</h1>
-<br>
+      <section class="section section-dark" aria-labelledby="services-title">
+        <div class="section-heading">
+          <p class="eyebrow">Restoration and Editing</p>
+          <h2 id="services-title">Careful work for every kind of image</h2>
+          <p>
+            From repairing a damaged family photograph to completing a creative Photoshop edit, each image receives an approach based on its condition and purpose.
+          </p>
+        </div>
 
-<div class="top">
-    <figure class="photogear_image">
-        <img src="assets/restorepage/photoshop.JPG" alt="Photoshop Loading Box" class="blueborder">
-           <figcaption class="hidden">Photoshop Loading Box</figcaption>
-    </figure>
-  
-  <p>
-    When I first discovered photoshop while taking a class in middle school, I felt inspired by the endless possibilities that it offers. I continued using Photoshop regularly, and took two semesters of it at the Santa Rosa Junior College, earning a skills certificate. In one of my classes, I was introduced to photo restorations using Photoshop. Outside of class, I restored some old family photos and received great feedback. I enjoy being able to repair important photographs and their history, and I think that Photoshop is a powerful tool to achieve it. 
-  </p>
+        <div class="restoration-service-grid">
+          <article class="restoration-primary">
+            <span class="service-number">01</span>
+            <h3>Photo Restoration</h3>
+            <p>
+              Repair tears, scratches, spots, stains, faded tones, color casts, and other damage while preserving the character of the original photograph.
+            </p>
+            <ul>
+              <li>Damage and scratch repair</li>
+              <li>Fade and color correction</li>
+              <li>Repair of missing areas when possible</li>
+              <li>Black-and-white colorization</li>
+              <li>Print-ready preparation</li>
+            </ul>
+          </article>
 
-<br>
-  
-  <p>
-     <q>I believe Photoshop is in some way the contemporary darkroom, the creative area that all photographers have available today.</q><br>
-          <span id="tab"> &#45; Douglas Kirkland</span>
-  </p>
-</div>
+          <article>
+            <span class="service-number">02</span>
+            <h3>Photo Editing and Retouching</h3>
+            <p>
+              Refine existing photographs or adapt them for a new purpose through detailed, natural-looking Photoshop work.
+            </p>
+            <ul>
+              <li>Object removal</li>
+              <li>Background cleanup or replacement</li>
+              <li>Portrait retouching</li>
+              <li>Color and exposure correction</li>
+              <li>Composite and creative edits</li>
+            </ul>
+          </article>
+        </div>
+      </section>
 
-<br>
-<br>
+      <section class="section section-panel" id="restoration-work" aria-labelledby="work-title">
+        <div class="section-heading">
+          <p class="eyebrow">Previous Work</p>
+          <h2 id="work-title">Restoration examples</h2>
+          <p>
+            Each photograph presents different damage and detail. These examples show how careful digital restoration can recover clarity, tone, and visual balance.
+          </p>
+        </div>
 
-<div class="flexcontainer_2column">
-    <div class="left2">
-       <h3> 
-         Photo Restoration
-       </h3>
-         <p class="padding">
-           Photographs fade and get damaged over time, and this can distract from the memories they capture. Looking back on loved ones through faded colors, rips, tears, and stains can often be unpleasant. Using Adobe Photoshop, I can restore your old, damaged photographs. Here are some ways I can restore and improve your old photos:
-         </p>
-          <ul class="services_list">
-             <li>Remove spots, stains, and tears</li>
-             <li>Fix color-casts and faded tones</li>
-             <li>Colorize black and white photos</li>
-          </ul> 
-<br>
-    <div class ="textblueborder">
-       <h4 class="textcenter"> 
-           Cost Estimates: 
-         </h4>
-         <ul class="textcenter">
-             <li class="nobullet">Low-level restoration ----- $35 to $45 per image</li>
-             <li class="nobullet">Medium-level restoration ----- $55 to $65 per image</li>
-             <li class="nobullet">High-level restoration ----- $75 to 85$ per image</li>
-         </ul>
-    </div>
-<br>     
-      <figure>
-        <img src="assets/homepage/services/photorestorations.jpg" alt="Screenshot of Photoshop">
-        <figcaption class="hidden">Screenshot of Photoshop</figcaption>
-      </figure>
-<br> 
-<br> 
-    </div>
+        <div class="restoration-gallery">
+          <figure class="gallery-featured">
+            <img src="assets/restorepage/restore3.jpg" alt="Photo restoration example 1 by Ramos Media" loading="lazy">
+            <figcaption>Restoration example 1</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/restorepage/restore1.jpg" alt="Photo restoration example 2 by Ramos Media" loading="lazy">
+            <figcaption>Restoration example 2</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/restorepage/restore2.jpg" alt="Photo restoration example 3 by Ramos Media" loading="lazy">
+            <figcaption>Restoration example 3</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/restorepage/restore5.jpg" alt="Photo restoration example 4 by Ramos Media" loading="lazy">
+            <figcaption>Restoration example 4</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/restorepage/restore4.jpg" alt="Photo restoration example 5 by Ramos Media" loading="lazy">
+            <figcaption>Restoration example 5</figcaption>
+          </figure>
+        </div>
+      </section>
 
-    <div class="right2">
-       <h3 > 
-         Photoshop
-       </h3>
-          <p class="padding">
-           Using Adobe Photoshop I can edit and manipulate your photos to better fit your needs. Whether this is removing unwanted objects in the picture, creating composite images, or anything else you might think of. Some other things I can do are: 
-         </p>
-            <ul class="services_list">
-             <li>Change the sky to be more pleasing</li>
-             <li>Add funny elements or changes</li>
+      <section class="section section-dark" aria-labelledby="repair-title">
+        <div class="section-heading">
+          <p class="eyebrow">Common Improvements</p>
+          <h2 id="repair-title">What can be restored</h2>
+        </div>
+
+        <div class="repair-grid">
+          <article><span aria-hidden="true">✓</span><h3>Fading</h3><p>Recover contrast, density, and more natural-looking tones.</p></article>
+          <article><span aria-hidden="true">✓</span><h3>Scratches and Tears</h3><p>Repair distracting surface damage and separated areas.</p></article>
+          <article><span aria-hidden="true">✓</span><h3>Spots and Stains</h3><p>Remove marks caused by age, handling, moisture, or storage.</p></article>
+          <article><span aria-hidden="true">✓</span><h3>Color Problems</h3><p>Correct unwanted color casts or add carefully interpreted color.</p></article>
+          <article><span aria-hidden="true">✓</span><h3>Missing Detail</h3><p>Reconstruct damaged areas when enough surrounding information remains.</p></article>
+          <article><span aria-hidden="true">✓</span><h3>Distracting Elements</h3><p>Clean up backgrounds and remove selected objects when appropriate.</p></article>
+        </div>
+      </section>
+
+      <section class="section submission-section" aria-labelledby="submission-title">
+        <div class="submission-image">
+          <img src="assets/homepage/services/photorestorations.jpg" alt="Damaged photograph being restored in Adobe Photoshop" loading="lazy">
+        </div>
+        <div>
+          <p class="eyebrow">Preparing Your Photograph</p>
+          <h2 id="submission-title">Start with the best copy available</h2>
+          <p>The quality of the source image has a major effect on what can be recovered. For the best result:</p>
+          <ul class="submission-list">
+            <li>Scan the original photograph when possible.</li>
+            <li>Use the highest resolution available.</li>
+            <li>Avoid screenshots and compressed social media copies.</li>
+            <li>If scanning is unavailable, photograph the original evenly in good light.</li>
+            <li>Keep the physical original safe. All restoration work is completed digitally.</li>
           </ul>
-<br>
-    <div class ="textblueborder">
-      <h4 class="textcenter"> 
-           Cost Estimates: 
-         </h4>
-         <ul class="textcenter">
-             <li class="nobullet">Low-level manipulation ----- $35 to $45 per image</li>
-             <li class="nobullet">Medium-level manipulation ----- $55 to $65 per image</li>
-             <li class="nobullet">High-level manipulation ----- $75 to 85$ per image</li>
-         </ul>
-    </div>
-<br>      
-         <figure>
-            <img src="assets/restorepage/certificate.JPG" alt="Photoshop Skills Certificate">
-            <figcaption class="hidden">Photoshop Skills Certificate</figcaption>
-         </figure>
-            
-    </div>
-</div>
-  
-<br>
+        </div>
+      </section>
 
-  <p class="quote"> <a href="services.html#quote" class="whitelink">Request an Estimate</a></p>
+      <section class="section section-panel" aria-labelledby="process-title">
+        <div class="section-heading">
+          <p class="eyebrow">The Process</p>
+          <h2 id="process-title">From damaged original to finished file</h2>
+        </div>
 
-<br>
-<br>
-<br>
-<br>
-  
-<h3 class="roboto">Previous Work</h3>
-<br>
+        <ol class="restoration-process">
+          <li><span>01</span><div><h3>Send the Photograph</h3><p>Provide the highest-quality scan or digital copy available.</p></div></li>
+          <li><span>02</span><div><h3>Assessment</h3><p>I review the damage and confirm the possibilities, estimate, and timeline.</p></div></li>
+          <li><span>03</span><div><h3>Restore</h3><p>I repair damage, rebuild detail where possible, and correct tone or color.</p></div></li>
+          <li><span>04</span><div><h3>Review and Deliver</h3><p>After the agreed revisions, you receive the completed high-resolution digital file.</p></div></li>
+        </ol>
+      </section>
 
-<div class="flexcontainer_3column">
+      <section class="section section-dark credential-section" aria-labelledby="credential-title">
+        <div class="credential-image">
+          <img src="assets/restorepage/certificate.JPG" alt="Photoshop Skills Certificate earned by Andrew Ramos" loading="lazy">
+        </div>
+        <div>
+          <p class="eyebrow">Training and Experience</p>
+          <h2 id="credential-title">Built on years of Photoshop work</h2>
+          <p>
+            I began learning Photoshop in middle school and continued through advanced coursework at Santa Rosa Junior College, where I earned a Photoshop skills certificate. Since then, I have applied those techniques to family photographs, creative projects, professional images, and restoration work.
+          </p>
+          <p>
+            Looking for photography instead of editing? Visit my <a class="text-link" href="photopage.html">photography services</a>.
+          </p>
+        </div>
+      </section>
 
-    <div class="left">
-       <figure>
-        <img  src="assets/restorepage/restore3.jpg"
-          alt="Restored Photo">
-        <figcaption class="hidden">Restored Photo</figcaption>
-      </figure>
-      <figure>
-         <img  src="assets/restorepage/restore1.jpg"
-          alt="Restored Photo">
-        <figcaption class="hidden">Restored Photo</figcaption>
-      </figure>
-    </div>
+      <aside class="expectations" aria-labelledby="expectations-title">
+        <p class="eyebrow">A Note About Restoration</p>
+        <h2 id="expectations-title">Every photograph is different.</h2>
+        <p>
+          Severe damage or completely missing detail cannot always be reconstructed accurately. Before work begins, I will explain what can reasonably be improved and where interpretation may be required.
+        </p>
+      </aside>
 
-    <div class="middle">
-       <figure>
-         <img  src="assets/restorepage/restore2.jpg"
-          alt="Restored Photo">
-        <figcaption class="hidden">Restored Photo</figcaption>
-      </figure>
-    </div>
+      <section class="restoration-estimate" aria-labelledby="estimate-title">
+        <div>
+          <p class="eyebrow">Custom Estimates</p>
+          <h2 id="estimate-title">Tell me about the photograph you want restored.</h2>
+          <p>Pricing depends on the amount of damage, missing detail, colorization, editing complexity, and intended print size.</p>
+        </div>
+        <a class="button button-light" href="services.html#quote">Request an Estimate</a>
+      </section>
+    </main>
 
-    <div class="right">
-      <figure>
-         <img  src="assets/restorepage/restore5.jpg"
-          alt="Restored Photo">
-        <figcaption class="hidden">Restored Photo</figcaption>
-      </figure>
-      <figure>
-         <img  src="assets/restorepage/restore4.jpg"
-          alt="Restored Photo">
-        <figcaption class="hidden">Restored Photo</figcaption>
-      </figure>
-    </div>
-  </div>
-
-<p class="textcenter"> <a href="services.html" class="whitelink">Back to Services</a></p>
-  
-  <footer>
-
-    <a class="floatleft" href="https://www.instagram.com/andrew_r4mos/" target="_blank"> <img
-        src="assets/smlogos/instagram.png" alt="Instagram"></a>
-    <a class="floatleft" href="https://www.youtube.com/channel/UC8VzyoBJ9tQY0sLvHmcyEqw" target="_blank"> <img
-        src="assets/smlogos/youtube.png" alt="Youtube"></a>
-    <a class="floatleft" href="mailto:andrewmramos9@gmail.com" target="_blank"> <img src="assets/smlogos/gmail.png"
-        alt="Gmail"></a>
-    <a id="uparrow" href="#top"> <img src="assets/arrow.png" alt="Jump to Top"></a>
-
-    <p id="foot">
-      &#169;2026 Andrew Ramos &#9475; All assets provided by Andrew
-    </p>
-
-  </footer>
-
-
-</body>
-
+    <footer class="site-footer">
+      <div class="social-links" aria-label="Social media links">
+        <a href="https://www.instagram.com/andrew_r4mos/" target="_blank" rel="noopener noreferrer"><img src="assets/smlogos/instagram.png" alt="Instagram" width="30" height="30"></a>
+        <a href="https://www.youtube.com/channel/UC8VzyoBJ9tQY0sLvHmcyEqw" target="_blank" rel="noopener noreferrer"><img src="assets/smlogos/youtube.png" alt="YouTube" width="30" height="30"></a>
+        <a href="mailto:andrewmramos9@gmail.com"><img src="assets/smlogos/gmail.png" alt="Email Andrew" width="30" height="30"></a>
+      </div>
+      <p>&copy; 2026 Andrew Ramos | All assets provided by Andrew</p>
+      <a class="back-to-top" href="#main-content">Back to top <span aria-hidden="true">↑</span></a>
+    </footer>
+  </body>
 </html>
