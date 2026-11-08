@@ -348,14 +348,6 @@ body {
 }
 
 @media (min-width: 1050px) {
-  .services-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .service-overview-featured {
-    grid-column: span 3;
-  }
-
   .quote-section {
     grid-template-columns: minmax(300px, 0.75fr) minmax(500px, 1.25fr);
     align-items: start;
@@ -374,3 +366,4 @@ body {
       url("assets/servicespage/servicesbackground-full.jpg");
   }
 }
+
