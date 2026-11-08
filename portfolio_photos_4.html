@@ -1,202 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Explore night sky, astrophotography, and long-exposure photography by Andrew Ramos of Ramos Media.">
+    <meta name="theme-color" content="#252525">
+    <title>Night and Astrophotography | Ramos Media</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style_home.css">
+    <link rel="stylesheet" href="style_portfolio_photos.css?v=2">
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,inital-scale=1">
-  <title>Ramos Media - Portfolio - Photos</title>
-  <link rel="stylesheet" href="style_portfolio_photos.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Sono&display=swap" rel="stylesheet">
-</head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<body>
-  <a id="top"></a>
-
-  <header>
-    <div class="dropdown">
-      <nav class="main_nav">
-        <input type="image" src="assets/menu.png" alt="Menu Button">
-        <div class="dropdown-content">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Ramos Media home">
+        <img src="assets/logo2.png" alt="Ramos Media" id="logo">
+      </a>
+      <details class="mobile-menu">
+        <summary aria-label="Open navigation menu">
+          <img src="assets/menu.png" alt="">
+          <span>Menu</span>
+        </summary>
+        <nav aria-label="Mobile navigation">
           <a href="index.html">Home</a>
-          <a href="portfolio.html"><b>Portfolio</b></a>
+          <a href="portfolio.html" aria-current="page">Portfolio</a>
           <a href="services.html">Services</a>
-        </div>
+          <a href="services.html#quote">Contact</a>
+        </nav>
+      </details>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html" aria-current="page">Portfolio</a>
+        <a href="services.html">Services</a>
+        <a href="services.html#quote">Contact</a>
       </nav>
-    </div>
-    <a href="index.html"> <img src="assets/logo2.png" alt="logo" id="logo"> </a>
-    <h1>Photographs</h1>
-  </header>
+    </header>
 
+    <main id="main-content">
+      <section class="gallery-hero" aria-labelledby="page-title" style="background-image: linear-gradient(90deg, rgba(8, 10, 18, 0.76) 0%, rgba(8, 10, 18, 0.46) 58%, rgba(8, 10, 18, 0.18) 100%), url('photos/night-01.jpeg');">
+        <div class="gallery-hero-content">
+          <p class="eyebrow">Photography Portfolio</p>
+          <h1 id="page-title">Night and Astrophotography</h1>
+          <p>Stars, night skies, and long exposures created after the daylight fades and familiar landscapes take on a different character.</p>
+          <div class="button-group">
+            <a class="button button-primary" href="#gallery">View the Gallery</a>
+            <a class="button button-secondary" href="portfolio.html">All Portfolio Work</a>
+          </div>
+        </div>
+      </section>
 
-<br>
-<br>
-<br>
-  <h1 class="page_title"> Photographs</h1>
-<br>
+      <nav class="gallery-category-nav" aria-label="Photography gallery categories">
+        <a href="portfolio_photos_2.html">Action and Adventure</a>
+        <a href="portfolio_photos_1.html">Landscapes and Travel</a>
+        <a href="portfolio_photos_4.html" aria-current="page">Night and Astrophotography</a>
+        <a href="portfolio_photos_5.html">Portraits and Lifestyle</a>
+        <a href="portfolio_photos_3.html">Automotive</a>
+      </nav>
 
-<nav class="second_nav">
-  <a href="portfolio_photos_1.html" class="whitelink"> Nature </a> 
-  <a href="portfolio_photos_2.html" class="whitelink"> Bikes </a>
-  <a href="portfolio_photos_3.html" class="whitelink"> Cars </a>
-  <a href="portfolio_photos_4.html" class="whitelink page_select"> <b>Night Photography</b></a>
-  <a href="portfolio_photos_5.html" class="whitelink"> Miscellaneous/Portrait </a>
-</nav>
+      <section class="gallery-section" id="gallery" aria-labelledby="gallery-title">
+        <div class="gallery-heading">
+          <div>
+            <p class="eyebrow">The Collection</p>
+            <h2 id="gallery-title">After dark.</h2>
+          </div>
+          <p>Select any photograph to open the full-size image. This collection explores stars, the Milky Way, low-light landscapes, and long-exposure scenes.</p>
+        </div>
 
-<br>
-<br>
-<br>
-  
-<div class="flexcontainer_3column">
-    <div class="left">
-       <figure>
-        <img class="blueborder grow" src="photos/night-01.jpeg"
-          alt="Night Sky Photo">
-        <figcaption>Night Sky Photo</figcaption>
-       </figure>
-       <figure>
-        <img class="blueborder grow" src="photos/night-02.jpeg"
-          alt="Night Sky Photo">
-        <figcaption>Night Sky Photo</figcaption>
-       </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/night-03.jpeg"
-          alt="Night Sky Photo">
-        <figcaption>Night Sky Photo</figcaption>
-       </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/night-11.jpeg"
-          alt="Night Sky Photo">
-        <figcaption>Night Sky Photo</figcaption>
-       </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/night-12.jpg"
-          alt="Night Sky Photo">
-        <figcaption>Night Sky Photo</figcaption>
-       </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/night-16.jpg"
-          alt="Night Sky Photo">
-        <figcaption>Night Sky Photo</figcaption>
-       </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/night-19.jpg"
-          alt="Night Sky Photo">
-        <figcaption>Night Sky Photo</figcaption>
-       </figure>      
-    </div>
+        <div class="photo-grid">
+          <a href="photos/night-01.jpeg" target="_blank"><img src="photos/night-01.jpeg" alt="Night sky and astrophotography image by Andrew Ramos" fetchpriority="high"></a>
+          <a href="photos/night-02.jpeg" target="_blank"><img src="photos/night-02.jpeg" alt="Night sky and astrophotography image by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/night-03.jpeg" target="_blank"><img src="photos/night-03.jpeg" alt="Night sky and astrophotography image by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/night-04.jpeg" target="_blank"><img src="photos/night-04.jpeg" alt="Night sky and astrophotography image by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/night-05.jpeg" target="_blank"><img src="photos/night-05.jpeg" alt="Night sky and astrophotography image by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/night-06.jpeg" target="_blank"><img src="photos/night-06.jpeg" alt="Night sky and astrophotography image by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/night-07.jpeg" target="_blank"><img src="photos/night-07.jpeg" alt="Night sky and astrophotography image by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/night-08.jpeg" target="_blank"><img src="photos/night-08.jpeg" alt="Night sky and astrophotography image by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/night-09.jpeg" target="_blank"><img src="photos/night-09.jpeg" alt="Night sky and astrophotography image by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/night-10.jpeg" target="_blank"><img src="photos/night-10.jpeg" alt="Night sky and astrophotography image by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/night-11.jpeg" target="_blank"><img src="photos/night-11.jpeg" alt="Night sky and astrophotography image by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/night-12.jpg" target="_blank"><img src="photos/night-12.jpg" alt="Night sky and astrophotography image by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/night-13.JPG" target="_blank"><img src="photos/night-13.JPG" alt="Night sky and astrophotography image by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/night-14.JPG" target="_blank"><img src="photos/night-14.JPG" alt="Night sky and astrophotography image by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/night-16.jpg" target="_blank"><img src="photos/night-16.jpg" alt="Night sky and astrophotography image by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/night-17.jpg" target="_blank"><img src="photos/night-17.jpg" alt="Night sky and astrophotography image by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/night-18.jpg" target="_blank"><img src="photos/night-18.jpg" alt="Night sky and astrophotography image by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/night-19.jpg" target="_blank"><img src="photos/night-19.jpg" alt="Night sky and astrophotography image by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/night-20.jpg" target="_blank"><img src="photos/night-20.jpg" alt="Night sky and astrophotography image by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/night-21.jpg" target="_blank"><img src="photos/night-21.jpg" alt="Night sky and astrophotography image by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/night-22.jpg" target="_blank"><img src="photos/night-22.jpg" alt="Night sky and astrophotography image by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/night-23.jpg" target="_blank"><img src="photos/night-23.jpg" alt="Night sky and astrophotography image by Andrew Ramos" loading="lazy"></a>
+        </div>
+      </section>
 
-    <div class="middle">
-       <figure>
-        <img class="blueborder grow" src="photos/night-05.jpeg"
-          alt="Night Sky Photo">
-        <figcaption>Night Sky Photo</figcaption>
-       </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/night-06.jpeg"
-          alt="Night Sky Photo">
-        <figcaption>Night Sky Photo</figcaption>
-       </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/night-07.jpeg"
-          alt="Night Sky Photo">
-        <figcaption>Night Sky Photo</figcaption>
-       </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/night-04.jpeg"
-          alt="Night Sky Photo">
-        <figcaption>Night Sky Photo</figcaption>
-       </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/night-13.JPG"
-          alt="Night Sky Photo">
-        <figcaption>Night Sky Photo</figcaption>
-       </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/night-17.jpg"
-          alt="Night Sky Photo">
-        <figcaption>Night Sky Photo</figcaption>
-       </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/night-20.jpg"
-          alt="Night Sky Photo">
-        <figcaption>Night Sky Photo</figcaption>
-       </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/night-22.jpg"
-          alt="Night Sky Photo">
-        <figcaption>Night Sky Photo</figcaption>
-       </figure>
-    </div>
+      <nav class="gallery-pager" aria-label="Portfolio gallery navigation">
+        <a href="portfolio_photos_1.html"><span aria-hidden="true">←</span> Landscapes and Travel</a>
+        <a href="portfolio_photos_5.html">Portraits and Lifestyle <span aria-hidden="true">→</span></a>
+      </nav>
 
-    <div class="right">
-      <figure>
-        <img class="blueborder grow" src="photos/night-08.jpeg"
-          alt="Night Sky Photo">
-        <figcaption>Night Sky Photo</figcaption>
-       </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/night-09.jpeg"
-          alt="Night Sky Photo">
-        <figcaption>Night Sky Photo</figcaption>
-       </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/night-10.jpeg"
-          alt="Night Sky Photo">
-        <figcaption>Night Sky Photo</figcaption>
-       </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/night-14.JPG"
-          alt="Night Sky Photo">
-        <figcaption>Night Sky Photo</figcaption>
-       </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/night-18.jpg"
-          alt="Night Sky Photo">
-        <figcaption>Night Sky Photo</figcaption>
-       </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/night-21.jpg"
-          alt="Night Sky Photo">
-        <figcaption>Night Sky Photo</figcaption>
-       </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/night-23.jpg"
-          alt="Night Sky Photo">
-        <figcaption>Night Sky Photo</figcaption>
-       </figure>
-    </div>
-  </div>
+      <section class="gallery-contact" aria-labelledby="contact-title">
+        <div>
+          <p class="eyebrow">Plan a Night Shoot</p>
+          <h2 id="contact-title">Have a night-sky location or concept in mind?</h2>
+          <p>Tell me about the location, subject, timing, and final images you want to create.</p>
+        </div>
+        <a class="button button-light" href="photopage.html#quote">Request an Estimate</a>
+      </section>
+    </main>
 
-   <p>
-     <a href="portfolio_photos_3.html" class="whitelink floatleft">Previous Page</a>
-   </p>
-   <p>
-     <a href="portfolio_photos_5.html" class="whitelink floatright">Next Page</a>
-   </p>
-
-<br>
-<br>
-  
-  <footer>
-
-    <a class="floatleft" href="https://www.instagram.com/andrew_r4mos/" target="_blank"> <img
-        src="assets/smlogos/instagram.png" alt="Instagram"></a>
-    <a class="floatleft" href="https://www.youtube.com/channel/UC8VzyoBJ9tQY0sLvHmcyEqw" target="_blank"> <img
-        src="assets/smlogos/youtube.png" alt="Youtube"></a>
-    <a class="floatleft" href="mailto:andrewmramos9@gmail.com" target="_blank"> <img src="assets/smlogos/gmail.png"
-        alt="Gmail"></a>
-    <a id="uparrow" href="#top"> <img src="assets/arrow.png" alt="Jump to Top"></a>
-
-    <p id="foot">
-      &#169;2026 Andrew Ramos &#9475; All assets provided by Andrew
-    </p>
-
-  </footer>
-
-
-</body>
-
+    <footer class="site-footer">
+      <div class="social-links" aria-label="Social media links">
+        <a href="https://www.instagram.com/andrew_r4mos/" target="_blank" rel="noopener noreferrer"><img src="assets/smlogos/instagram.png" alt="Instagram" width="30" height="30"></a>
+        <a href="https://www.youtube.com/channel/UC8VzyoBJ9tQY0sLvHmcyEqw" target="_blank" rel="noopener noreferrer"><img src="assets/smlogos/youtube.png" alt="YouTube" width="30" height="30"></a>
+        <a href="mailto:andrewmramos9@gmail.com"><img src="assets/smlogos/gmail.png" alt="Email Andrew" width="30" height="30"></a>
+      </div>
+      <p>&copy; 2026 Andrew Ramos | All assets provided by Andrew</p>
+      <a class="back-to-top" href="#main-content">Back to top <span aria-hidden="true">↑</span></a>
+    </footer>
+  </body>
 </html>
