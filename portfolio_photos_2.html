@@ -1,208 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Explore action, adventure, and mountain biking photography by Andrew Ramos of Ramos Media.">
+    <meta name="theme-color" content="#252525">
+    <title>Action and Adventure Photography | Ramos Media</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style_home.css">
+    <link rel="stylesheet" href="style_portfolio_photos.css?v=2">
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,inital-scale=1">
-  <title>Ramos Media - Portfolio - Photos</title>
-  <link rel="stylesheet" href="style_portfolio_photos.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Sono&display=swap" rel="stylesheet">
-</head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<body>
-  <a id="top"></a>
-
-  <header>
-    <div class="dropdown">
-      <nav class="main_nav">
-        <input type="image" src="assets/menu.png" alt="Menu Button">
-        <div class="dropdown-content">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Ramos Media home">
+        <img src="assets/logo2.png" alt="Ramos Media" id="logo">
+      </a>
+      <details class="mobile-menu">
+        <summary aria-label="Open navigation menu">
+          <img src="assets/menu.png" alt="">
+          <span>Menu</span>
+        </summary>
+        <nav aria-label="Mobile navigation">
           <a href="index.html">Home</a>
-          <a href="portfolio.html"><b>Portfolio</b></a>
+          <a href="portfolio.html" aria-current="page">Portfolio</a>
           <a href="services.html">Services</a>
-        </div>
+          <a href="services.html#quote">Contact</a>
+        </nav>
+      </details>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html" aria-current="page">Portfolio</a>
+        <a href="services.html">Services</a>
+        <a href="services.html#quote">Contact</a>
       </nav>
-    </div>
-    <a href="index.html"> <img src="assets/logo2.png" alt="logo" id="logo"> </a>
-    <h1>Photographs</h1>
-  </header>
+    </header>
 
+    <main id="main-content">
+      <section class="gallery-hero" aria-labelledby="page-title" style="background-image: linear-gradient(90deg, rgba(14, 14, 14, 0.76) 0%, rgba(14, 14, 14, 0.46) 58%, rgba(14, 14, 14, 0.18) 100%), url('photos/bike-01.jpeg');">
+        <div class="gallery-hero-content">
+          <p class="eyebrow">Photography Portfolio</p>
+          <h1 id="page-title">Action and Adventure</h1>
+          <p>Mountain biking and outdoor photography built around motion, terrain, and the moments that make an adventure memorable.</p>
+          <div class="button-group">
+            <a class="button button-primary" href="#gallery">View the Gallery</a>
+            <a class="button button-secondary" href="portfolio.html">All Portfolio Work</a>
+          </div>
+        </div>
+      </section>
 
-<br>
-<br>
-<br>
-  <h1 class="page_title"> Photographs</h1>
-<br>
+      <nav class="gallery-category-nav" aria-label="Photography gallery categories">
+        <a href="portfolio_photos_2.html" aria-current="page">Action and Adventure</a>
+        <a href="portfolio_photos_1.html">Landscapes and Travel</a>
+        <a href="portfolio_photos_4.html">Night and Astrophotography</a>
+        <a href="portfolio_photos_5.html">Portraits and Lifestyle</a>
+        <a href="portfolio_photos_3.html">Automotive</a>
+      </nav>
 
-<nav class="second_nav">
-  <a href="portfolio_photos_1.html" class="whitelink"> Nature </a> 
-  <a href="portfolio_photos_2.html" class="whitelink page_select"> <b>Bikes</b> </a>
-  <a href="portfolio_photos_3.html" class="whitelink"> Cars </a>
-  <a href="portfolio_photos_4.html" class="whitelink"> Night Photography </a>
-  <a href="portfolio_photos_5.html" class="whitelink"> Miscellaneous/Portrait </a>
-</nav>
+      <section class="gallery-section" id="gallery" aria-labelledby="gallery-title">
+        <div class="gallery-heading">
+          <div>
+            <p class="eyebrow">The Collection</p>
+            <h2 id="gallery-title">Movement, terrain, and speed.</h2>
+          </div>
+          <p>Select any photograph to open the full-size image. This collection focuses on mountain biking, riders, trails, and the landscapes surrounding the action.</p>
+        </div>
 
-<br>
-<br>
-<br>
-  
-<div class="flexcontainer_3column">
-    <div class="left">
-       <figure>
-        <img class="blueborder grow" src="photos/bike-01.jpeg"
-          alt="Bike Photo">
-        <figcaption>Bike Photo</figcaption>
-      </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/bike-02.jpeg"
-          alt="Bike Photo">
-        <figcaption>Bike Photo</figcaption>
-      </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/bike-03.jpeg"
-          alt="Bike Photo">
-        <figcaption>Bike Photo</figcaption>
-      </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/bike-04.jpeg"
-          alt="Bike Photo">
-        <figcaption>Bike Photo</figcaption>
-      </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/bike-05.jpeg"
-          alt="Bike Photo">
-        <figcaption>Bike Photo</figcaption>
-      </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/bike-06.jpeg"
-          alt="Bike Photo">
-        <figcaption>Bike Photo</figcaption>
-      </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/bike-14.jpeg"
-          alt="Bike Photo">
-        <figcaption>Bike Photo</figcaption>
-      </figure>
-    </div>
+        <div class="photo-grid">
+          <a href="photos/bike-01.jpeg" target="_blank"><img src="photos/bike-01.jpeg" alt="Mountain biking and adventure photograph by Andrew Ramos" fetchpriority="high"></a>
+          <a href="photos/bike-02.jpeg" target="_blank"><img src="photos/bike-02.jpeg" alt="Mountain biking and adventure photograph by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/bike-03.jpeg" target="_blank"><img src="photos/bike-03.jpeg" alt="Mountain biking and adventure photograph by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/bike-04.jpeg" target="_blank"><img src="photos/bike-04.jpeg" alt="Mountain biking and adventure photograph by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/bike-05.jpeg" target="_blank"><img src="photos/bike-05.jpeg" alt="Mountain biking and adventure photograph by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/bike-06.jpeg" target="_blank"><img src="photos/bike-06.jpeg" alt="Mountain biking and adventure photograph by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/bike-07.jpeg" target="_blank"><img src="photos/bike-07.jpeg" alt="Mountain biking and adventure photograph by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/bike-08.jpeg" target="_blank"><img src="photos/bike-08.jpeg" alt="Mountain biking and adventure photograph by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/bike-09.jpeg" target="_blank"><img src="photos/bike-09.jpeg" alt="Mountain biking and adventure photograph by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/bike-10.jpeg" target="_blank"><img src="photos/bike-10.jpeg" alt="Mountain biking and adventure photograph by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/bike-11.jpeg" target="_blank"><img src="photos/bike-11.jpeg" alt="Mountain biking and adventure photograph by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/bike-12.jpeg" target="_blank"><img src="photos/bike-12.jpeg" alt="Mountain biking and adventure photograph by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/bike-13.jpeg" target="_blank"><img src="photos/bike-13.jpeg" alt="Mountain biking and adventure photograph by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/bike-14.jpeg" target="_blank"><img src="photos/bike-14.jpeg" alt="Mountain biking and adventure photograph by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/bike-15.jpeg" target="_blank"><img src="photos/bike-15.jpeg" alt="Mountain biking and adventure photograph by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/bike-16.jpeg" target="_blank"><img src="photos/bike-16.jpeg" alt="Mountain biking and adventure photograph by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/bike-17.jpeg" target="_blank"><img src="photos/bike-17.jpeg" alt="Mountain biking and adventure photograph by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/bike-18.jpeg" target="_blank"><img src="photos/bike-18.jpeg" alt="Mountain biking and adventure photograph by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/bike-19.jpeg" target="_blank"><img src="photos/bike-19.jpeg" alt="Mountain biking and adventure photograph by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/bike-20.jpeg" target="_blank"><img src="photos/bike-20.jpeg" alt="Mountain biking and adventure photograph by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/bike-21.jpeg" target="_blank"><img src="photos/bike-21.jpeg" alt="Mountain biking and adventure photograph by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/bike-22.jpeg" target="_blank"><img src="photos/bike-22.jpeg" alt="Mountain biking and adventure photograph by Andrew Ramos" loading="lazy"></a>
+          <a href="photos/bike-23.jpeg" target="_blank"><img src="photos/bike-23.jpeg" alt="Mountain biking and adventure photograph by Andrew Ramos" loading="lazy"></a>
+        </div>
+      </section>
 
-    <div class="middle">
-     <figure>
-        <img class="blueborder grow" src="photos/bike-08.jpeg"
-          alt="Bike Photo">
-        <figcaption>Bike Photo</figcaption>
-      </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/bike-09.jpeg"
-          alt="Bike Photo">
-        <figcaption>Bike Photo</figcaption>
-      </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/bike-10.jpeg"
-          alt="Bike Photo">
-        <figcaption>Bike Photo</figcaption>
-      </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/bike-11.jpeg"
-          alt="Bike Photo">
-        <figcaption>Bike Photo</figcaption>
-      </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/bike-12.jpeg"
-          alt="Bike Photo">
-        <figcaption>Bike Photo</figcaption>
-      </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/bike-13.jpeg"
-          alt="Bike Photo">
-        <figcaption>Bike Photo</figcaption>
-      </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/bike-22.jpeg"
-          alt="Bike Photo">
-        <figcaption>Bike Photo</figcaption>
-      </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/bike-23.jpeg"
-          alt="Bike Photo">
-        <figcaption>Bike Photo</figcaption>
-      </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/bike-07.jpeg"
-          alt="Bike Photo">
-        <figcaption>Bike Photo</figcaption>
-      </figure>
-    </div>
+      <nav class="gallery-pager" aria-label="Portfolio gallery navigation">
+        <a href="portfolio.html"><span aria-hidden="true">←</span> Portfolio hub</a>
+        <a href="portfolio_photos_1.html">Landscapes and Travel <span aria-hidden="true">→</span></a>
+      </nav>
 
-    <div class="right">
-      <figure>
-        <img class="blueborder grow" src="photos/bike-15.jpeg"
-          alt="Bike Photo">
-        <figcaption>Bike Photo</figcaption>
-      </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/bike-16.jpeg"
-          alt="Bike Photo">
-        <figcaption>Bike Photo</figcaption>
-      </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/bike-17.jpeg"
-          alt="Bike Photo">
-        <figcaption>Bike Photo</figcaption>
-      </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/bike-18.jpeg"
-          alt="Bike Photo">
-        <figcaption>Bike Photo</figcaption>
-      </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/bike-19.jpeg"
-          alt="Bike Photo">
-        <figcaption>Bike Photo</figcaption>
-      </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/bike-20.jpeg"
-          alt="Bike Photo">
-        <figcaption>Bike Photo</figcaption>
-      </figure>
-      <figure>
-        <img class="blueborder grow" src="photos/bike-21.jpeg"
-          alt="Bike Photo">
-        <figcaption>Bike Photo</figcaption>
-      </figure>
-    </div>
-  </div>
+      <section class="gallery-contact" aria-labelledby="contact-title">
+        <div>
+          <p class="eyebrow">Plan an Adventure Shoot</p>
+          <h2 id="contact-title">Have a trail, athlete, or outdoor project in mind?</h2>
+          <p>Tell me about the activity, location, timing, and final images you need.</p>
+        </div>
+        <a class="button button-light" href="photopage.html#quote">Request an Estimate</a>
+      </section>
+    </main>
 
-  <p>
-     <a href="portfolio_photos_1.html" class="whitelink floatleft">Previous Page</a>
-  </p>
-   <p>
-     <a href="portfolio_photos_3.html" class="whitelink floatright">Next Page</a>
-   </p>
-
-
-<br>
-<br>
-  
-  <footer>
-
-    <a class="floatleft" href="https://www.instagram.com/andrew_r4mos/" target="_blank"> <img
-        src="assets/smlogos/instagram.png" alt="Instagram"></a>
-    <a class="floatleft" href="https://www.youtube.com/channel/UC8VzyoBJ9tQY0sLvHmcyEqw" target="_blank"> <img
-        src="assets/smlogos/youtube.png" alt="Youtube"></a>
-    <a class="floatleft" href="mailto:andrewmramos9@gmail.com" target="_blank"> <img src="assets/smlogos/gmail.png"
-        alt="Gmail"></a>
-    <a id="uparrow" href="#top"> <img src="assets/arrow.png" alt="Jump to Top"></a>
-
-    <p id="foot">
-      &#169;2026 Andrew Ramos &#9475; All assets provided by Andrew
-    </p>
-
-  </footer>
-
-
-</body>
-
+    <footer class="site-footer">
+      <div class="social-links" aria-label="Social media links">
+        <a href="https://www.instagram.com/andrew_r4mos/" target="_blank" rel="noopener noreferrer"><img src="assets/smlogos/instagram.png" alt="Instagram" width="30" height="30"></a>
+        <a href="https://www.youtube.com/channel/UC8VzyoBJ9tQY0sLvHmcyEqw" target="_blank" rel="noopener noreferrer"><img src="assets/smlogos/youtube.png" alt="YouTube" width="30" height="30"></a>
+        <a href="mailto:andrewmramos9@gmail.com"><img src="assets/smlogos/gmail.png" alt="Email Andrew" width="30" height="30"></a>
+      </div>
+      <p>&copy; 2026 Andrew Ramos | All assets provided by Andrew</p>
+      <a class="back-to-top" href="#main-content">Back to top <span aria-hidden="true">↑</span></a>
+    </footer>
+  </body>
 </html>
