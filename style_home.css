@@ -621,17 +621,6 @@ h3 {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .service-card-featured {
-    grid-column: span 2;
-    display: grid;
-    grid-template-columns: 1.15fr 1fr;
-  }
-
-  .service-card-featured > img {
-    height: 100%;
-    aspect-ratio: auto;
-  }
-
   .about {
     grid-template-columns: minmax(280px, 0.8fr) minmax(340px, 1.2fr);
   }
@@ -663,19 +652,6 @@ h3 {
     display: none;
   }
 
-  .service-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .service-card-featured {
-    grid-column: auto;
-    display: block;
-  }
-
-  .service-card-featured > img {
-    height: auto;
-    aspect-ratio: 4 / 3;
-  }
 }
 
 @media (min-width: 1800px) {
@@ -698,3 +674,4 @@ h3 {
     transition-duration: 0.01ms !important;
   }
 }
+
