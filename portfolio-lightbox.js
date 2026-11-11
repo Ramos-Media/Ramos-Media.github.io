@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </button>
         <figure>
           <img class="lightbox-image" alt="">
-          <figcaption class="lightbox-caption"></figcaption>
+          <figcaption class="lightbox-caption">© 2026 Ramos Media. All rights reserved.</figcaption>
         </figure>
         <button class="lightbox-nav lightbox-next" type="button" aria-label="Next photograph">
           <span aria-hidden="true">›</span>
