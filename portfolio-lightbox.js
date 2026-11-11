@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="lightbox-toolbar">
         <p class="lightbox-counter" aria-live="polite"></p>
         <div class="lightbox-actions">
-          <a class="lightbox-original" href="#" target="_blank" rel="noopener noreferrer">View original</a>
           <button class="lightbox-close" type="button" aria-label="Close image viewer">Close</button>
         </div>
       </div>
@@ -25,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </button>
         <figure>
           <img class="lightbox-image" alt="">
-          <figcaption class="lightbox-caption"></figcaption>
+          <figcaption class="lightbox-caption">© 2026 Ramos Media. All rights reserved.</figcaption>
         </figure>
         <button class="lightbox-nav lightbox-next" type="button" aria-label="Next photograph">
           <span aria-hidden="true">›</span>
@@ -36,9 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.append(dialog);
 
   const viewerImage = dialog.querySelector(".lightbox-image");
-  const caption = dialog.querySelector(".lightbox-caption");
   const counter = dialog.querySelector(".lightbox-counter");
-  const originalLink = dialog.querySelector(".lightbox-original");
   const closeButton = dialog.querySelector(".lightbox-close");
   const previousButton = dialog.querySelector(".lightbox-previous");
   const nextButton = dialog.querySelector(".lightbox-next");
@@ -63,8 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     viewerImage.src = link.href;
     viewerImage.alt = description;
-    caption.textContent = description;
-    originalLink.href = link.href;
     counter.textContent = `${currentIndex + 1} of ${items.length}`;
     preloadAdjacent();
   };
