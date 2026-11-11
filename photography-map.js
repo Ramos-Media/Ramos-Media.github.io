@@ -81,6 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const lightboxClose = document.getElementById("lightbox-close");
   const lightboxPrevious = document.getElementById("lightbox-previous");
   const lightboxNext = document.getElementById("lightbox-next");
+  let map = null;
 
   if (!mapElement || typeof L === "undefined") {
     if (status) {
@@ -96,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let activeLocationTitle = "";
   let activeImageIndex = 0;
 
-  const map = L.map(mapElement, {
+  map = L.map(mapElement, {
     center: [44.02, -110.95],
     zoom: 7,
     minZoom: 4,
@@ -227,7 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       button.append(image, copy, arrow);
       button.addEventListener("click", () => {
-        if (typeof map !== "undefined") {
+        if (map) {
           map.flyTo([location.latitude, location.longitude], 10, {
             duration: 0.8
           });
