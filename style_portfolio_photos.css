@@ -1,5 +1,10 @@
 body {
-  background: var(--charcoal-950);
+  background:
+    radial-gradient(ellipse at 94% 14%, rgba(68, 177, 225, 0.085), transparent 32%),
+    radial-gradient(ellipse at 5% 66%, rgba(68, 177, 225, 0.05), transparent 28%),
+    var(--charcoal-950);
+  background-size: 100% 1100px;
+  background-repeat: repeat-y;
 }
 
 .gallery-hero {
@@ -178,7 +183,9 @@ body {
   gap: 12px;
   padding: 20px 22px;
   color: var(--off-white);
-  background: var(--charcoal-800);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(68, 177, 225, 0.1), transparent 42%),
+    var(--charcoal-800);
   border-left: 4px solid var(--blue);
   border-radius: 6px;
   font-weight: 700;
