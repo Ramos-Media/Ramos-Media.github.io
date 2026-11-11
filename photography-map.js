@@ -25,7 +25,7 @@ const photographyLocations = [
     galleryImages: [
       "/new_photos/landscape-travel/IMG_6900.jpg",
       "/new_photos/landscape-travel/IMG_6363.jpg",
-      "/new_photos/landscape-travel/IMG8611.jpg",
+      "/new_photos/landscape-travel/IMG5002.jpg",
       "/new_photos/landscape-travel/IMG5318.jpg",
       "/new_photos/landscape-travel/IMG_8617.jpg",
       "/new_photos/landscape-travel/IMG4832.jpg"
