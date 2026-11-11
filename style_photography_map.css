@@ -125,6 +125,12 @@ body {
   color: var(--map-blue-light);
 }
 
+
+/* Convert the standard no-key OpenStreetMap tiles into a muted dark basemap. */
+.leaflet-tile-pane {
+  filter: grayscale(1) invert(0.92) brightness(0.72) contrast(1.18);
+}
+
 /* Leaflet controls and attribution */
 .leaflet-control-zoom a,
 .leaflet-control-layers {
