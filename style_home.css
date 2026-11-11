@@ -5,6 +5,8 @@
   --charcoal-700: #3b3b3b;
   --blue: #44b1e1;
   --blue-light: #a4dceb;
+  --blue-glow: rgba(68, 177, 225, 0.13);
+  --blue-glow-soft: rgba(68, 177, 225, 0.065);
   --white: #ffffff;
   --off-white: #f3f5f6;
   --muted: #c7cdd0;
@@ -25,7 +27,10 @@ html {
 
 body {
   margin: 0;
-  background: var(--charcoal-950);
+  background:
+    radial-gradient(ellipse at 92% 12%, var(--blue-glow-soft), transparent 34%),
+    radial-gradient(ellipse at 8% 76%, rgba(68, 177, 225, 0.04), transparent 30%),
+    var(--charcoal-950);
   color: var(--white);
   font-family: "Montserrat", Verdana, Geneva, Tahoma, sans-serif;
   font-size: 17px;
@@ -341,11 +346,17 @@ h3 {
 }
 
 .section-dark {
-  background: var(--charcoal-950);
+  background:
+    radial-gradient(ellipse at 92% 14%, var(--blue-glow), transparent 36%),
+    radial-gradient(ellipse at 8% 88%, var(--blue-glow-soft), transparent 30%),
+    var(--charcoal-950);
 }
 
 .section-panel {
-  background: var(--charcoal-900);
+  background:
+    radial-gradient(ellipse at 10% 18%, rgba(68, 177, 225, 0.11), transparent 34%),
+    radial-gradient(ellipse at 90% 84%, rgba(68, 177, 225, 0.05), transparent 30%),
+    var(--charcoal-900);
 }
 
 .section-heading {
@@ -433,7 +444,10 @@ h3 {
 
 .service-card {
   overflow: hidden;
-  background: var(--charcoal-800);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(68, 177, 225, 0.1), transparent 38%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.025), transparent 48%),
+    var(--charcoal-800);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius);
   transition: border-color 180ms ease, transform 180ms ease;
@@ -552,7 +566,9 @@ h3 {
   gap: 20px;
   align-items: center;
   padding: 30px clamp(22px, 5vw, 72px);
-  background: var(--charcoal-900);
+  background:
+    radial-gradient(ellipse at 8% 50%, rgba(68, 177, 225, 0.08), transparent 28%),
+    var(--charcoal-900);
   color: var(--muted);
   font-size: 0.82rem;
   text-align: center;
