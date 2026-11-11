@@ -1,5 +1,8 @@
 body {
-  background: var(--charcoal-950);
+  background:
+    radial-gradient(ellipse at 94% 20%, rgba(68, 177, 225, 0.09), transparent 34%),
+    radial-gradient(ellipse at 5% 76%, rgba(68, 177, 225, 0.05), transparent 30%),
+    var(--charcoal-950);
 }
 
 .portfolio-hero {
@@ -116,7 +119,9 @@ body {
   gap: 8px 14px;
   align-items: center;
   padding: 24px;
-  background: var(--charcoal-800);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(68, 177, 225, 0.085), transparent 42%),
+    var(--charcoal-800);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-left: 4px solid #69767b;
   border-radius: 8px;
