@@ -10,7 +10,12 @@
 }
 
 body {
-  background: var(--map-ink);
+  background:
+    radial-gradient(ellipse at 92% 16%, rgba(68, 177, 225, 0.1), transparent 34%),
+    radial-gradient(ellipse at 6% 72%, rgba(68, 177, 225, 0.055), transparent 30%),
+    var(--map-ink);
+  background-size: 100% 1100px;
+  background-repeat: repeat-y;
 }
 
 .map-hero {
@@ -268,7 +273,9 @@ body {
   border: 1px solid var(--map-border);
   border-left: 4px solid #69767b;
   border-radius: 10px;
-  background: var(--map-panel);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(68, 177, 225, 0.1), transparent 44%),
+    var(--map-panel);
   color: #fff;
   font: inherit;
   text-align: left;
