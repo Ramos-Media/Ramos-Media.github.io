@@ -503,16 +503,20 @@ h3 {
 
 .about-portrait {
   max-width: 580px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
   margin: 0 auto;
+  border: 5px solid var(--blue);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
 .about-portrait img {
   width: 100%;
-  aspect-ratio: 1;
+  height: 100%;
+  display: block;
   object-fit: cover;
-  border: 5px solid var(--blue);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  object-position: center;
 }
 
 .about-content p:not(.eyebrow) {
