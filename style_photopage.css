@@ -460,9 +460,7 @@ body {
     border: 1px solid rgba(68, 177, 222, 0.35);
     border-radius: calc(var(--radius) + 6px);
     isolation: isolate;
-    background:
-      radial-gradient(circle at 50% 18%, rgba(138, 206, 235, 0.22), transparent 42%),
-      linear-gradient(150deg, #2d373b 0%, #20282b 56%, #171b1d 100%);
+    background: #22292c;
     box-shadow: var(--shadow);
   }
 
@@ -476,19 +474,6 @@ body {
       repeating-linear-gradient(96deg, rgba(255, 255, 255, 0.025) 0 2px, transparent 2px 38px),
       linear-gradient(155deg, #6e4a32, #3f291c 58%, #261810);
     box-shadow: inset 0 2px rgba(255, 255, 255, 0.1), 0 -16px 36px rgba(0, 0, 0, 0.2);
-  }
-
-  html.gear-enhanced .gear-stage::after {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    top: 64%;
-    left: 27%;
-    width: 46%;
-    height: 7%;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.62);
-    filter: blur(18px);
   }
 
   html.gear-enhanced .gear-chapters {
