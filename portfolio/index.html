@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style_home.css?v=3">
-    <link rel="stylesheet" href="/style_portfolio.css?v=3">
+    <link rel="stylesheet" href="/style_portfolio.css?v=4">
   </head>
 
   <body>
@@ -47,84 +47,119 @@
     </header>
 
     <main id="main-content">
-      <section class="portfolio-hero" aria-labelledby="page-title">
-        <div class="portfolio-hero-content">
+      <section class="portfolio-gallery" aria-labelledby="page-title">
+        <div class="portfolio-intro">
           <p class="eyebrow">Ramos Media Portfolio</p>
-          <h1 id="page-title">Photography and films built around adventure.</h1>
-          <p>
-            A collection of action, outdoor, landscape, portrait, automotive, wildlife, black-and-white, night, and video work by Andrew Ramos.
-          </p>
-          <div class="button-group">
-            <a class="button button-primary" href="#photography">Explore Photography</a>
-            <a class="button button-secondary" href="#video">Watch Video Work</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-dark" id="photography" aria-labelledby="photography-title">
-        <div class="section-heading portfolio-heading">
-          <div>
-            <p class="eyebrow">Primary Portfolio</p>
-            <h2 id="photography-title">Photography</h2>
-          </div>
-          <p>
-            From fast-moving outdoor action to quiet landscapes and night skies, these galleries collect the subjects and environments I most enjoy photographing.
-          </p>
+          <h1 id="page-title">Explore the photography.</h1>
+          <p>Choose a collection to begin.</p>
         </div>
 
-        <a class="photography-feature" href="/portfolio/action-adventure/">
-          <img src="/assets/photopage/photo.jpg" alt="Selection of photography by Andrew Ramos" loading="lazy">
-          <span class="photography-feature-overlay">
-            <span class="card-kicker">Featured Category</span>
-            <span class="photography-feature-title">Action and Adventure</span>
-            <span class="photography-feature-link">Explore the gallery <span aria-hidden="true">→</span></span>
-          </span>
-        </a>
+        <nav class="category-grid" aria-label="Photography portfolio categories">
+          <a class="category-card" href="/portfolio/action-adventure/">
+            <img src="/new_photos/action-adventure/DSC7216-Edit-2.jpg" alt="" fetchpriority="high">
+            <span class="category-card-shade"></span>
+            <span class="category-card-content">
+              <span class="category-number">01</span>
+              <strong>Action and Adventure</strong>
+              <small>Mountain biking, outdoor sports, and fast-moving experiences</small>
+              <span class="category-link">View gallery <span aria-hidden="true">→</span></span>
+            </span>
+          </a>
 
-        <nav class="portfolio-categories" aria-label="Photography portfolio categories">
-          <a href="/portfolio/action-adventure/" class="category-primary">
-            <span>01</span>
-            <strong>Action and Adventure</strong>
-            <small>Mountain biking, outdoor sports, and fast-moving experiences</small>
-            <span class="category-arrow" aria-hidden="true">→</span>
+          <a class="category-card" href="/portfolio/landscapes-travel/">
+            <img src="/new_photos/landscape-travel/IMG_6900.jpg" alt="" loading="lazy">
+            <span class="category-card-shade"></span>
+            <span class="category-card-content">
+              <span class="category-number">02</span>
+              <strong>Landscapes and Travel</strong>
+              <small>Natural environments, destinations, and wide-open places</small>
+              <span class="category-link">View gallery <span aria-hidden="true">→</span></span>
+            </span>
           </a>
-          <a href="/portfolio/landscapes-travel/">
-            <span>02</span>
-            <strong>Landscapes and Travel</strong>
-            <small>Natural environments, destinations, and wide-open places</small>
-            <span class="category-arrow" aria-hidden="true">→</span>
+
+          <a class="category-card" href="/portfolio/night-astrophotography/">
+            <img src="/new_photos/night-astro/IMG5747-2.jpg" alt="" loading="lazy">
+            <span class="category-card-shade"></span>
+            <span class="category-card-content">
+              <span class="category-number">03</span>
+              <strong>Night and Astrophotography</strong>
+              <small>Stars, long exposures, storms, and scenes after dark</small>
+              <span class="category-link">View gallery <span aria-hidden="true">→</span></span>
+            </span>
           </a>
-          <a href="/portfolio/night-astrophotography/">
-            <span>03</span>
-            <strong>Night and Astrophotography</strong>
-            <small>Stars, night skies, long exposures, and low-light scenes</small>
-            <span class="category-arrow" aria-hidden="true">→</span>
+
+          <a class="category-card" href="/portfolio/portraits-lifestyle/">
+            <img src="/new_photos/portraits-lifestyle/andrew_ramos_013.jpg" alt="" loading="lazy">
+            <span class="category-card-shade"></span>
+            <span class="category-card-content">
+              <span class="category-number">04</span>
+              <strong>Portraits and Lifestyle</strong>
+              <small>People, personalities, activities, and genuine moments</small>
+              <span class="category-link">View gallery <span aria-hidden="true">→</span></span>
+            </span>
           </a>
-          <a href="/portfolio/portraits-lifestyle/">
-            <span>04</span>
-            <strong>Portraits and Lifestyle</strong>
-            <small>People, personalities, activities, and genuine moments</small>
-            <span class="category-arrow" aria-hidden="true">→</span>
+
+          <a class="category-card" href="/portfolio/automotive/">
+            <img src="/photos/car-32.jpg" alt="" loading="lazy">
+            <span class="category-card-shade"></span>
+            <span class="category-card-content">
+              <span class="category-number">05</span>
+              <strong>Automotive</strong>
+              <small>Vehicles, details, motion, and machines with character</small>
+              <span class="category-link">View gallery <span aria-hidden="true">→</span></span>
+            </span>
           </a>
-          <a href="/portfolio/automotive/">
-            <span>05</span>
-            <strong>Automotive</strong>
-            <small>Cars, details, motion, and machines in their environments</small>
-            <span class="category-arrow" aria-hidden="true">→</span>
-          </a>
-          <a href="/portfolio/wildlife-black-white/">
-            <span>06</span>
-            <strong>Wildlife and Black &amp; White</strong>
-            <small>Wild animals, monochrome landscapes, architecture, and visual studies</small>
-            <span class="category-arrow" aria-hidden="true">→</span>
-          </a>
-          <a href="/portfolio/map/">
-            <span>07</span>
-            <strong>Interactive Photography Map</strong>
-            <small>Explore landscapes, wildlife, and outdoor stories by location</small>
-            <span class="category-arrow" aria-hidden="true">→</span>
+
+          <a class="category-card" href="/portfolio/wildlife-black-white/">
+            <img src="/new_photos/wildlife/IMG5270.jpg" alt="" loading="lazy">
+            <span class="category-card-shade"></span>
+            <span class="category-card-content">
+              <span class="category-number">06</span>
+              <strong>Wildlife and Black &amp; White</strong>
+              <small>Wild animals and monochrome studies of form, texture, and place</small>
+              <span class="category-link">View gallery <span aria-hidden="true">→</span></span>
+            </span>
           </a>
         </nav>
+      </section>
+
+      <section class="map-feature" aria-labelledby="map-feature-title">
+        <div class="map-feature-art" aria-hidden="true">
+          <svg viewBox="0 0 560 380" focusable="false">
+            <defs>
+              <radialGradient id="globeGlow" cx="50%" cy="45%" r="58%">
+                <stop offset="0%" stop-color="#173746"/>
+                <stop offset="72%" stop-color="#10252e"/>
+                <stop offset="100%" stop-color="#0c171c"/>
+              </radialGradient>
+              <filter id="pinGlow" x="-60%" y="-60%" width="220%" height="220%">
+                <feGaussianBlur stdDeviation="8" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <circle cx="280" cy="190" r="132" fill="url(#globeGlow)" stroke="#44b1e1" stroke-width="3"/>
+            <ellipse cx="280" cy="190" rx="64" ry="132" fill="none" stroke="#44b1e1" stroke-opacity=".42" stroke-width="2"/>
+            <ellipse cx="280" cy="190" rx="112" ry="132" fill="none" stroke="#44b1e1" stroke-opacity=".18" stroke-width="2"/>
+            <path d="M151 157h258M148 208h264M174 261h212" fill="none" stroke="#44b1e1" stroke-opacity=".34" stroke-width="2"/>
+            <path d="M197 111c34 21 51 40 72 68 20 27 50 37 92 40" fill="none" stroke="#9fe1ff" stroke-width="3" stroke-linecap="round" stroke-dasharray="3 10"/>
+            <g transform="translate(188 93)" filter="url(#pinGlow)">
+              <path d="M0 0c-18 0-33 15-33 33 0 25 33 60 33 60s33-35 33-60C33 15 18 0 0 0Z" fill="#44b1e1"/>
+              <circle cx="0" cy="32" r="11" fill="#12191d"/>
+            </g>
+            <g transform="translate(362 211)" filter="url(#pinGlow)">
+              <path d="M0 0c-15 0-27 12-27 27 0 20 27 49 27 49s27-29 27-49C27 12 15 0 0 0Z" fill="#f4f4f2"/>
+              <circle cx="0" cy="26" r="9" fill="#44b1e1"/>
+            </g>
+            <circle cx="269" cy="179" r="6" fill="#f4f4f2"/>
+          </svg>
+        </div>
+
+        <div class="map-feature-copy">
+          <p class="eyebrow">Explore by Place</p>
+          <h2 id="map-feature-title">Follow the photographs across the map.</h2>
+          <p>Discover landscapes, wildlife, and outdoor stories through the locations connected to them.</p>
+          <a class="button button-primary" href="/portfolio/map/">Open the Photography Map</a>
+        </div>
       </section>
 
       <section class="section section-panel video-portfolio" id="video" aria-labelledby="video-title">
