@@ -118,11 +118,20 @@
 
       <section class="section about" aria-labelledby="about-title">
         <div class="about-portrait">
-          <picture>
-            <source media="(min-width: 1200px)" srcset="assets/homepage/portrait/portrait-500.jpg">
-            <source media="(min-width: 700px)" srcset="assets/homepage/portrait/portrait-300.jpg">
-            <img src="assets/homepage/portrait/portrait-200.jpg" alt="Portrait of photographer Andrew Ramos" width="500" height="500" loading="lazy">
-          </picture>
+          <img
+            src="assets/homepage/portrait/portrait-800.jpg"
+            srcset="
+              assets/homepage/portrait/portrait-400.jpg 400w,
+              assets/homepage/portrait/portrait-800.jpg 800w,
+              assets/homepage/portrait/portrait-1200.jpg 1200w
+            "
+            sizes="(max-width: 699px) calc(100vw - 44px), 580px"
+            alt="Andrew Ramos standing on a rocky overlook with mountains in the background"
+            width="1200"
+            height="801"
+            loading="lazy"
+            decoding="async"
+          >
         </div>
 
         <div class="about-content">
