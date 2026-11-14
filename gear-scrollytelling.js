@@ -13,6 +13,7 @@
   const progressBar = story.querySelector("[data-gear-progress]");
   const context = canvas.getContext("2d", { alpha: true });
   const cache = new Map();
+  const boundsCache = new WeakMap();
   let activeIndex = 0;
   let requestedFrame = 0;
 
@@ -39,6 +40,7 @@
 
     const image = new Image();
     image.decoding = "async";
+    image.crossOrigin = "anonymous";
     image.src = frameUrl(sequences[sequenceIndex], frameIndex);
     image.addEventListener("load", requestRender, { once: true });
     cache.set(key, image);
@@ -67,22 +69,82 @@
     }
   };
 
+  const getContentBounds = (image) => {
+    if (boundsCache.has(image)) {
+      return boundsCache.get(image);
+    }
+
+    const sampleWidth = 180;
+    const sampleHeight = Math.max(1, Math.round(sampleWidth * image.naturalHeight / image.naturalWidth));
+    const sampleCanvas = document.createElement("canvas");
+    const sampleContext = sampleCanvas.getContext("2d", { willReadFrequently: true });
+    sampleCanvas.width = sampleWidth;
+    sampleCanvas.height = sampleHeight;
+    sampleContext.drawImage(image, 0, 0, sampleWidth, sampleHeight);
+
+    const pixels = sampleContext.getImageData(0, 0, sampleWidth, sampleHeight).data;
+    let minX = sampleWidth;
+    let minY = sampleHeight;
+    let maxX = 0;
+    let maxY = 0;
+
+    for (let y = 0; y < sampleHeight; y += 1) {
+      for (let x = 0; x < sampleWidth; x += 1) {
+        const offset = (y * sampleWidth + x) * 4;
+        const brightness = pixels[offset] + pixels[offset + 1] + pixels[offset + 2];
+        if (pixels[offset + 3] > 20 && brightness > 34) {
+          minX = Math.min(minX, x);
+          minY = Math.min(minY, y);
+          maxX = Math.max(maxX, x);
+          maxY = Math.max(maxY, y);
+        }
+      }
+    }
+
+    const hasContent = minX <= maxX && minY <= maxY;
+    const scaleX = image.naturalWidth / sampleWidth;
+    const scaleY = image.naturalHeight / sampleHeight;
+    const bounds = hasContent
+      ? {
+          x: minX * scaleX,
+          y: minY * scaleY,
+          width: Math.max(1, (maxX - minX + 1) * scaleX),
+          height: Math.max(1, (maxY - minY + 1) * scaleY)
+        }
+      : { x: 0, y: 0, width: image.naturalWidth, height: image.naturalHeight };
+
+    boundsCache.set(image, bounds);
+    return bounds;
+  };
+
   const drawContained = (image, alpha = 1) => {
     if (!image?.complete || !image.naturalWidth) {
       return false;
     }
 
+    const bounds = getContentBounds(image);
+    const padding = 1.14;
     const scale = Math.min(
-      canvas.width / image.naturalWidth,
-      canvas.height / image.naturalHeight
+      canvas.width / (bounds.width * padding),
+      canvas.height / (bounds.height * padding)
     );
-    const width = image.naturalWidth * scale;
-    const height = image.naturalHeight * scale;
+    const width = bounds.width * scale;
+    const height = bounds.height * scale;
     const x = (canvas.width - width) / 2;
     const y = (canvas.height - height) / 2;
 
     context.globalAlpha = alpha;
-    context.drawImage(image, x, y, width, height);
+    context.drawImage(
+      image,
+      bounds.x,
+      bounds.y,
+      bounds.width,
+      bounds.height,
+      x,
+      y,
+      width,
+      height
+    );
     context.globalAlpha = 1;
     return true;
   };
@@ -184,3 +246,4 @@
   window.addEventListener("resize", requestRender);
   requestRender();
 })();
+
