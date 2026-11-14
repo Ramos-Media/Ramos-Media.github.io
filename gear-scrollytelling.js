@@ -14,6 +14,7 @@
   const context = canvas.getContext("2d", { alpha: true });
   const cache = new Map();
   const boundsCache = new WeakMap();
+  const cutoutCache = new WeakMap();
   let activeIndex = 0;
   let requestedFrame = 0;
 
@@ -117,34 +118,68 @@
     return bounds;
   };
 
+  const getCutout = (image, bounds) => {
+    if (cutoutCache.has(image)) {
+      return cutoutCache.get(image);
+    }
+
+    const longestSide = Math.max(bounds.width, bounds.height);
+    const sampleScale = Math.min(1, 760 / longestSide);
+    const cutout = document.createElement("canvas");
+    cutout.width = Math.max(1, Math.round(bounds.width * sampleScale));
+    cutout.height = Math.max(1, Math.round(bounds.height * sampleScale));
+    const cutoutContext = cutout.getContext("2d", { willReadFrequently: true });
+
+    cutoutContext.drawImage(
+      image,
+      bounds.x,
+      bounds.y,
+      bounds.width,
+      bounds.height,
+      0,
+      0,
+      cutout.width,
+      cutout.height
+    );
+
+    const frame = cutoutContext.getImageData(0, 0, cutout.width, cutout.height);
+    const pixels = frame.data;
+
+    for (let offset = 0; offset < pixels.length; offset += 4) {
+      const brightness = Math.max(pixels[offset], pixels[offset + 1], pixels[offset + 2]);
+
+      if (brightness <= 3) {
+        pixels[offset + 3] = 0;
+      } else if (brightness < 18) {
+        pixels[offset + 3] = Math.round(pixels[offset + 3] * ((brightness - 3) / 15));
+      }
+    }
+
+    cutoutContext.putImageData(frame, 0, 0);
+    cutoutCache.set(image, cutout);
+    return cutout;
+  };
+
   const drawContained = (image, alpha = 1) => {
     if (!image?.complete || !image.naturalWidth) {
       return false;
     }
 
     const bounds = getContentBounds(image);
-    const padding = 1.14;
+    const cutout = getCutout(image, bounds);
+    const padding = 1.12;
+    const displayAreaHeight = canvas.height * 0.72;
     const scale = Math.min(
-      canvas.width / (bounds.width * padding),
-      canvas.height / (bounds.height * padding)
+      canvas.width / (cutout.width * padding),
+      displayAreaHeight / (cutout.height * padding)
     );
-    const width = bounds.width * scale;
-    const height = bounds.height * scale;
+    const width = cutout.width * scale;
+    const height = cutout.height * scale;
     const x = (canvas.width - width) / 2;
-    const y = (canvas.height - height) / 2;
+    const y = Math.max(canvas.height * 0.035, (displayAreaHeight - height) / 2);
 
     context.globalAlpha = alpha;
-    context.drawImage(
-      image,
-      bounds.x,
-      bounds.y,
-      bounds.width,
-      bounds.height,
-      x,
-      y,
-      width,
-      height
-    );
+    context.drawImage(cutout, x, y, width, height);
     context.globalAlpha = 1;
     return true;
   };
@@ -201,9 +236,7 @@
     const { index, progress } = getChapterState();
     const sequence = sequences[index];
     const framePosition = progress * Math.max(sequence.count - 1, 0);
-    const lowerIndex = Math.floor(framePosition);
-    const upperIndex = Math.min(sequence.count - 1, lowerIndex + 1);
-    const blend = framePosition - lowerIndex;
+    const frameIndex = Math.round(framePosition);
 
     if (index !== activeIndex) {
       activeIndex = index;
@@ -218,14 +251,11 @@
     progressBar.style.width = `${Math.round(progress * 100)}%`;
     context.clearRect(0, 0, canvas.width, canvas.height);
 
-    const lowerImage = loadFrame(index, lowerIndex);
-    const upperImage = loadFrame(index, upperIndex);
-    const drewLower = drawContained(lowerImage, 1);
+    const image = loadFrame(index, frameIndex);
+    const drewFrame = drawContained(image, 1);
 
-    if (drewLower && upperIndex !== lowerIndex) {
-      drawContained(upperImage, blend);
-    } else if (!drewLower) {
-      drawContained(findLoadedFrame(index, lowerIndex), 1);
+    if (!drewFrame) {
+      drawContained(findLoadedFrame(index, frameIndex), 1);
     }
   };
 
