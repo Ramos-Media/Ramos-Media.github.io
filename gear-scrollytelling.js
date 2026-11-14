@@ -25,6 +25,14 @@
     title: chapter.querySelector("h3").textContent.trim()
   }));
 
+  const lineup = [
+    { sequenceIndex: 2, x: 0.12, baseY: 0.71, maxW: 0.2, maxH: 0.44 },
+    { sequenceIndex: 3, x: 0.29, baseY: 0.7, maxW: 0.19, maxH: 0.42 },
+    { sequenceIndex: 0, x: 0.5, baseY: 0.73, maxW: 0.27, maxH: 0.4 },
+    { sequenceIndex: 4, x: 0.72, baseY: 0.7, maxW: 0.21, maxH: 0.48 },
+    { sequenceIndex: 5, x: 0.89, baseY: 0.71, maxW: 0.2, maxH: 0.55 }
+  ];
+
   const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
 
   const frameUrl = (sequence, index) => {
@@ -160,29 +168,52 @@
     return cutout;
   };
 
-  const drawContained = (image, alpha = 1) => {
+  const drawPlaced = (image, placement, foreground = false) => {
     if (!image?.complete || !image.naturalWidth) {
       return false;
     }
 
     const bounds = getContentBounds(image);
     const cutout = getCutout(image, bounds);
-    const padding = 1.12;
-    const displayAreaHeight = canvas.height * 0.72;
     const scale = Math.min(
-      canvas.width / (cutout.width * padding),
-      displayAreaHeight / (cutout.height * padding)
+      (canvas.width * placement.maxW) / cutout.width,
+      (canvas.height * placement.maxH) / cutout.height
     );
     const width = cutout.width * scale;
     const height = cutout.height * scale;
-    const x = (canvas.width - width) / 2;
-    const y = Math.max(canvas.height * 0.035, (displayAreaHeight - height) / 2);
+    const x = canvas.width * placement.x - width / 2;
+    const y = canvas.height * placement.baseY - height;
 
-    context.globalAlpha = alpha;
+    context.save();
+    context.globalAlpha = placement.alpha ?? 1;
+    context.filter = foreground
+      ? "none"
+      : "saturate(0.72) brightness(0.62)";
     context.drawImage(cutout, x, y, width, height);
-    context.globalAlpha = 1;
+    context.restore();
     return true;
   };
+
+  const drawLineup = (activeSequenceIndex) => {
+    lineup.forEach((placement) => {
+      if (placement.sequenceIndex === activeSequenceIndex) {
+        return;
+      }
+
+      drawPlaced(loadFrame(placement.sequenceIndex, 0), {
+        ...placement,
+        alpha: 0.72
+      });
+    });
+  };
+
+  const drawFeatured = (image) => drawPlaced(image, {
+    x: 0.5,
+    baseY: 0.69,
+    maxW: 0.66,
+    maxH: 0.62,
+    alpha: 1
+  }, true);
 
   const findLoadedFrame = (sequenceIndex, preferredIndex) => {
     const sequence = sequences[sequenceIndex];
@@ -248,14 +279,17 @@
       preloadSequence(index + 1);
     }
 
-    progressBar.style.width = `${Math.round(progress * 100)}%`;
+    if (progressBar) {
+      progressBar.style.width = `${Math.round(progress * 100)}%`;
+    }
     context.clearRect(0, 0, canvas.width, canvas.height);
+    drawLineup(index);
 
     const image = loadFrame(index, frameIndex);
-    const drewFrame = drawContained(image, 1);
+    const drewFrame = drawFeatured(image);
 
     if (!drewFrame) {
-      drawContained(findLoadedFrame(index, frameIndex), 1);
+      drawFeatured(findLoadedFrame(index, frameIndex));
     }
   };
 
@@ -266,6 +300,7 @@
   }
 
   document.documentElement.classList.add("gear-enhanced");
+  lineup.forEach(({ sequenceIndex }) => loadFrame(sequenceIndex, 0));
   preloadSequence(0);
   preloadSequence(1);
 
