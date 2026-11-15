@@ -180,7 +180,7 @@
           <p class="eyebrow">Inside the Gear Locker</p>
           <h2 id="details-title">Professional tools, selected with purpose</h2>
           <p>
-            My equipment is chosen around the environment, subject, and final image. Scroll through the core kit that carries projects from wide night skies to distant wildlife.
+            My equipment is chosen around the environment, subject, and final image. Explore the core camera system in 3D, then see the supporting tools that carry projects from wide night skies to distant wildlife.
           </p>
         </div>
 
@@ -199,7 +199,9 @@
           </div>
 
           <figure class="gear-model-shell">
-            <model-viewer
+            <div class="gear-model-viewport">
+              <img class="gear-model-fallback" src="/assets/servicespage/gear/d800+lens/d800+lens01.webp" alt="" aria-hidden="true">
+              <model-viewer
               class="gear-model"
               src="/assets/servicespage/gear/d800+lens/d800-lens-web.glb"
               poster="/assets/servicespage/gear/d800+lens/d800+lens01.webp"
@@ -219,7 +221,8 @@
               loading="lazy"
               reveal="auto"
               touch-action="pan-y">
-            </model-viewer>
+              </model-viewer>
+            </div>
             <figcaption>Interactive model · Drag to inspect · Scroll to zoom</figcaption>
           </figure>
         </div>
@@ -280,8 +283,15 @@
       <a class="back-to-top" href="#main-content">Back to top <span aria-hidden="true">↑</span></a>
     </footer>
     <script>
+      const gearModel = document.querySelector(".gear-model");
+      const gearShell = gearModel?.closest(".gear-model-shell");
+
+      gearModel?.addEventListener("load", () => {
+        gearShell?.classList.add("is-loaded");
+      });
+
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        document.querySelector(".gear-model")?.removeAttribute("auto-rotate");
+        gearModel?.removeAttribute("auto-rotate");
       }
     </script>
   </body>
