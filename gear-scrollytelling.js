@@ -25,12 +25,17 @@
     title: chapter.querySelector("h3").textContent.trim()
   }));
 
+  /*
+   * Every inactive item has a permanent parking spot. The reserved open space
+   * in the middle is where the featured frame is drawn, so the kit does not
+   * shuffle around or pile on top of itself as chapters change.
+   */
   const lineup = [
-    { sequenceIndex: 2, x: 0.12, baseY: 0.71, maxW: 0.2, maxH: 0.44 },
-    { sequenceIndex: 3, x: 0.29, baseY: 0.7, maxW: 0.19, maxH: 0.42 },
-    { sequenceIndex: 0, x: 0.5, baseY: 0.73, maxW: 0.27, maxH: 0.4 },
-    { sequenceIndex: 4, x: 0.72, baseY: 0.7, maxW: 0.21, maxH: 0.48 },
-    { sequenceIndex: 5, x: 0.89, baseY: 0.71, maxW: 0.2, maxH: 0.55 }
+    { sequenceIndex: 2, x: 0.07, baseY: 0.72, maxW: 0.11, maxH: 0.3 },
+    { sequenceIndex: 3, x: 0.19, baseY: 0.71, maxW: 0.11, maxH: 0.3 },
+    { sequenceIndex: 0, x: 0.31, baseY: 0.72, maxW: 0.12, maxH: 0.25 },
+    { sequenceIndex: 4, x: 0.8, baseY: 0.71, maxW: 0.12, maxH: 0.34 },
+    { sequenceIndex: 5, x: 0.93, baseY: 0.72, maxW: 0.1, maxH: 0.39 }
   ];
 
   const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
@@ -150,17 +155,54 @@
       cutout.height
     );
 
+    /*
+     * The exported frames use exact black as their matte. Remove only those
+     * pixels. A feathered near-black threshold would also reduce the opacity
+     * of the black camera bodies and create the blue see-through effect.
+     */
     const frame = cutoutContext.getImageData(0, 0, cutout.width, cutout.height);
     const pixels = frame.data;
+    const visited = new Uint8Array(cutout.width * cutout.height);
+    const queue = new Int32Array(cutout.width * cutout.height);
+    let queueStart = 0;
+    let queueEnd = 0;
 
-    for (let offset = 0; offset < pixels.length; offset += 4) {
-      const brightness = Math.max(pixels[offset], pixels[offset + 1], pixels[offset + 2]);
+    const enqueueMatte = (pixelIndex) => {
+      const offset = pixelIndex * 4;
+      const isExactMatte = Math.max(
+        pixels[offset],
+        pixels[offset + 1],
+        pixels[offset + 2]
+      ) <= 3;
 
-      if (brightness <= 3) {
-        pixels[offset + 3] = 0;
-      } else if (brightness < 18) {
-        pixels[offset + 3] = Math.round(pixels[offset + 3] * ((brightness - 3) / 15));
+      if (!visited[pixelIndex] && pixels[offset + 3] > 0 && isExactMatte) {
+        visited[pixelIndex] = 1;
+        queue[queueEnd] = pixelIndex;
+        queueEnd += 1;
       }
+    };
+
+    for (let x = 0; x < cutout.width; x += 1) {
+      enqueueMatte(x);
+      enqueueMatte((cutout.height - 1) * cutout.width + x);
+    }
+
+    for (let y = 0; y < cutout.height; y += 1) {
+      enqueueMatte(y * cutout.width);
+      enqueueMatte(y * cutout.width + cutout.width - 1);
+    }
+
+    while (queueStart < queueEnd) {
+      const pixelIndex = queue[queueStart];
+      const x = pixelIndex % cutout.width;
+      const y = Math.floor(pixelIndex / cutout.width);
+      queueStart += 1;
+      pixels[pixelIndex * 4 + 3] = 0;
+
+      if (x > 0) enqueueMatte(pixelIndex - 1);
+      if (x < cutout.width - 1) enqueueMatte(pixelIndex + 1);
+      if (y > 0) enqueueMatte(pixelIndex - cutout.width);
+      if (y < cutout.height - 1) enqueueMatte(pixelIndex + cutout.width);
     }
 
     cutoutContext.putImageData(frame, 0, 0);
@@ -185,34 +227,34 @@
     const y = canvas.height * placement.baseY - height;
 
     context.save();
-    context.globalAlpha = placement.alpha ?? 1;
+    context.globalAlpha = 1;
     context.filter = foreground
       ? "none"
-      : "saturate(0.72) brightness(0.62)";
+      : "saturate(0.86) brightness(0.78)";
     context.drawImage(cutout, x, y, width, height);
     context.restore();
     return true;
   };
 
   const drawLineup = (activeSequenceIndex) => {
+    const hiddenSequences = activeSequenceIndex === 1
+      ? new Set([0, 3])
+      : new Set([activeSequenceIndex]);
+
     lineup.forEach((placement) => {
-      if (placement.sequenceIndex === activeSequenceIndex) {
+      if (hiddenSequences.has(placement.sequenceIndex)) {
         return;
       }
 
-      drawPlaced(loadFrame(placement.sequenceIndex, 0), {
-        ...placement,
-        alpha: 0.72
-      });
+      drawPlaced(loadFrame(placement.sequenceIndex, 0), placement);
     });
   };
 
   const drawFeatured = (image) => drawPlaced(image, {
-    x: 0.5,
-    baseY: 0.69,
-    maxW: 0.66,
-    maxH: 0.62,
-    alpha: 1
+    x: 0.54,
+    baseY: 0.84,
+    maxW: 0.37,
+    maxH: 0.49
   }, true);
 
   const findLoadedFrame = (sequenceIndex, preferredIndex) => {
