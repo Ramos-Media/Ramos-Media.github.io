@@ -14,7 +14,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style_home.css?v=3">
-    <link rel="stylesheet" href="/style_photopage.css?v=9">
+    <link rel="stylesheet" href="/style_photopage.css?v=11">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js"></script>
   </head>
 
   <body>
@@ -179,91 +180,51 @@
           <p class="eyebrow">Inside the Gear Locker</p>
           <h2 id="details-title">Professional tools, selected with purpose</h2>
           <p>
-            My equipment is chosen around the environment, subject, and final image. Scroll through the core kit that carries projects from wide night skies to distant wildlife.
+            My equipment is chosen around the environment, subject, and final image. Explore the core camera system in 3D, then see the supporting tools that carry projects from wide night skies to distant wildlife.
           </p>
         </div>
 
-        <div class="gear-story-layout" data-gear-story>
-          <div class="gear-chapters">
-            <article class="gear-chapter is-active" data-folder="d800" data-prefix="d800" data-count="12">
-              <img class="gear-chapter-image" src="/assets/servicespage/gear/d800/d80001.webp" alt="" loading="lazy">
-              <div class="gear-chapter-card">
-                <p class="gear-number">01 / Camera Body</p>
-                <h3>Nikon D800</h3>
-                <p class="gear-spec">36.3 MP · Full-frame FX · Nikon F-mount</p>
-                <p>
-                  The D800 is the foundation of my photography kit. Its high-resolution full-frame sensor provides the detail and flexibility I need for landscapes, portraits, action, and commercial work.
-                </p>
-              </div>
-            </article>
-
-            <article class="gear-chapter" data-folder="d800+lens" data-prefix="d800+lens" data-count="13">
-              <img class="gear-chapter-image" src="/assets/servicespage/gear/d800+lens/d800+lens01.webp" alt="" loading="lazy">
-              <div class="gear-chapter-card">
-                <p class="gear-number">02 / Complete System</p>
-                <h3>Built around the project</h3>
-                <p class="gear-spec">Camera · Lens · Grip · Field support</p>
-                <p>
-                  The camera is only one part of the system. Lenses and supporting equipment are selected around the subject, location, working distance, and final use of the photographs.
-                </p>
-              </div>
-            </article>
-
-            <article class="gear-chapter" data-folder="14-24mm" data-prefix="14-24mm" data-count="9">
-              <img class="gear-chapter-image" src="/assets/servicespage/gear/14-24mm/14-24mm01.webp" alt="" loading="lazy">
-              <div class="gear-chapter-card">
-                <p class="gear-number">03 / Ultra-wide</p>
-                <h3>Nikon 14–24mm f/2.8G</h3>
-                <p class="gear-spec">Astrophotography · Landscapes · Environments</p>
-                <p>
-                  An ultra-wide professional zoom used primarily for night skies, expansive landscapes, and scenes where the surrounding environment is an essential part of the story.
-                </p>
-              </div>
-            </article>
-
-            <article class="gear-chapter" data-folder="28-70mm" data-prefix="28-70mm" data-count="7">
-              <img class="gear-chapter-image" src="/assets/servicespage/gear/28-70mm/28-70mm01.webp" alt="" loading="lazy">
-              <div class="gear-chapter-card">
-                <p class="gear-number">04 / Everyday range</p>
-                <h3>Nikon 28–70mm f/2.8D</h3>
-                <p class="gear-spec">Everyday work · Portraits · Events</p>
-                <p>
-                  My everyday professional zoom covers natural portraits, documentary moments, events, and the changing situations that make up a typical assignment.
-                </p>
-              </div>
-            </article>
-
-            <article class="gear-chapter" data-folder="70-200mm" data-prefix="70-200mm" data-count="10">
-              <img class="gear-chapter-image" src="/assets/servicespage/gear/70-200mm/70-200mm01.webp" alt="" loading="lazy">
-              <div class="gear-chapter-card">
-                <p class="gear-number">05 / Telephoto zoom</p>
-                <h3>Nikon 70–200mm f/2.8G VR</h3>
-                <p class="gear-spec">Action · Portraits · Compressed landscapes</p>
-                <p>
-                  A fast telephoto zoom that lets me isolate subjects and stay close to the action without interrupting it. It is a mainstay for outdoor sports, portraits, and events.
-                </p>
-              </div>
-            </article>
-
-            <article class="gear-chapter" data-folder="300mm" data-prefix="300mm" data-count="12">
-              <img class="gear-chapter-image" src="/assets/servicespage/gear/300mm/300mm01.webp" alt="" loading="lazy">
-              <div class="gear-chapter-card">
-                <p class="gear-number">06 / Super-telephoto</p>
-                <h3>Nikon AF-I 300mm f/2.8D</h3>
-                <p class="gear-spec">Wildlife · Distant subjects · Outdoor action</p>
-                <p>
-                  Passed down from my grandfather, this professional super-telephoto is both a working creative tool and a meaningful part of my collection. Its reach and bright aperture make it ideal for wildlife and long-distance photography.
-                </p>
-              </div>
-            </article>
+        <div class="gear-model-layout">
+          <div class="gear-model-copy">
+            <p class="gear-number">Interactive 3D / Core System</p>
+            <h3>Nikon D800 + 28–70mm f/2.8</h3>
+            <p class="gear-spec">36.3 MP full-frame body · Professional everyday zoom</p>
+            <p>
+              This is the foundation of my working photography kit. The D800 provides the detail and editing flexibility I need, while the 28–70mm f/2.8 covers portraits, events, documentary moments, and changing conditions in the field.
+            </p>
+            <ul class="gear-model-details">
+              <li><strong>Drag</strong> to rotate the camera</li>
+              <li><strong>Scroll or pinch</strong> to zoom</li>
+            </ul>
           </div>
 
-          <div class="gear-stage" aria-hidden="true">
-            <canvas class="gear-canvas" data-gear-canvas></canvas>
-            <div class="gear-stage-meta">
-              <span data-gear-stage-label>Nikon D800</span>
+          <figure class="gear-model-shell">
+            <div class="gear-model-viewport">
+              <img class="gear-model-fallback" src="/assets/servicespage/gear/d800+lens/d800+lens01.webp" alt="" aria-hidden="true">
+              <model-viewer
+              class="gear-model"
+              src="/assets/servicespage/gear/d800+lens/d800-lens-web.glb"
+              poster="/assets/servicespage/gear/d800+lens/d800+lens01.webp"
+              alt="Interactive three-dimensional model of Andrew Ramos's Nikon D800 camera with a Nikon 28–70mm f/2.8 lens"
+              camera-controls
+              auto-rotate
+              auto-rotate-delay="1200"
+              rotation-per-second="14deg"
+              interaction-prompt="auto"
+              environment-image="neutral"
+              exposure="0.95"
+              shadow-intensity="0.28"
+              shadow-softness="0.9"
+              camera-orbit="35deg 72deg auto"
+              min-camera-orbit="auto 42deg auto"
+              max-camera-orbit="auto 100deg auto"
+              loading="lazy"
+              reveal="auto"
+              touch-action="pan-y">
+              </model-viewer>
             </div>
-          </div>
+            <figcaption>Interactive model · Drag to inspect · Scroll to zoom</figcaption>
+          </figure>
         </div>
 
         <div class="supporting-kit" aria-labelledby="supporting-kit-title">
@@ -321,6 +282,17 @@
       <p>&copy; 2026 Andrew Ramos | All assets provided by Andrew</p>
       <a class="back-to-top" href="#main-content">Back to top <span aria-hidden="true">↑</span></a>
     </footer>
-    <script src="/gear-scrollytelling.js?v=8" defer></script>
+    <script>
+      const gearModel = document.querySelector(".gear-model");
+      const gearShell = gearModel?.closest(".gear-model-shell");
+
+      gearModel?.addEventListener("load", () => {
+        gearShell?.classList.add("is-loaded");
+      });
+
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        gearModel?.removeAttribute("auto-rotate");
+      }
+    </script>
   </body>
 </html>
