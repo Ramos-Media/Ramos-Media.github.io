@@ -378,7 +378,31 @@ body {
   background: linear-gradient(90deg, transparent, rgba(141, 216, 244, 0.25), transparent);
 }
 
+.gear-model-viewport {
+  position: relative;
+  min-height: clamp(480px, 68vw, 720px);
+}
+
+.gear-model-fallback {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  padding: clamp(24px, 5vw, 64px);
+  object-fit: contain;
+  opacity: 1;
+  transition: opacity 260ms ease;
+}
+
+.gear-model-shell.is-loaded .gear-model-fallback {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .gear-model {
+  position: relative;
+  z-index: 2;
   display: block;
   width: 100%;
   height: clamp(480px, 68vw, 720px);
@@ -446,8 +470,10 @@ body {
 }
 
 @media (max-width: 699px) {
+  .gear-model-viewport,
   .gear-model {
     height: min(118vw, 560px);
+    min-height: 0;
   }
 
   .gear-model-shell figcaption {
