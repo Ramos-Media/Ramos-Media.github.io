@@ -381,6 +381,10 @@ body {
 .gear-model-viewport {
   position: relative;
   min-height: clamp(480px, 68vw, 720px);
+  background:
+    linear-gradient(to bottom, transparent 0 71%, rgba(103, 166, 184, 0.18) 71%, transparent 71.4%),
+    radial-gradient(ellipse at 50% 71%, rgba(39, 139, 178, 0.3), transparent 49%),
+    linear-gradient(to bottom, transparent 71%, #17272c 71.3%, #080e11 100%);
 }
 
 .gear-model-fallback {
