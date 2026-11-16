@@ -354,6 +354,53 @@ body {
   color: #fff;
 }
 
+.gear-selector {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.gear-selector[hidden] {
+  display: none;
+}
+
+.gear-selector button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 11px 13px;
+  border: 1px solid rgba(137, 190, 210, 0.22);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.78);
+  background: rgba(10, 24, 31, 0.72);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.gear-selector button span {
+  color: #7bbad0;
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+}
+
+.gear-selector button:hover,
+.gear-selector button[aria-pressed="true"] {
+  border-color: #44b1de;
+  color: #fff;
+  background: rgba(32, 121, 156, 0.26);
+}
+
+.gear-selector button:focus-visible {
+  outline: 3px solid #bde9fb;
+  outline-offset: 3px;
+}
+
 .gear-model-shell {
   position: relative;
   min-width: 0;

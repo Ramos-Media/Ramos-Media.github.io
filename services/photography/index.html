@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style_home.css?v=3">
-    <link rel="stylesheet" href="/style_photopage.css?v=12">
+    <link rel="stylesheet" href="/style_photopage.css?v=13">
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js"></script>
   </head>
 
@@ -180,18 +180,26 @@
           <p class="eyebrow">Inside the Gear Locker</p>
           <h2 id="details-title">Professional tools, selected with purpose</h2>
           <p>
-            My equipment is chosen around the environment, subject, and final image. See the core camera system in 3D, then explore the supporting tools that carry projects from wide night skies to distant wildlife.
+            My equipment is chosen around the environment, subject, and final image. Explore the camera and lenses in 3D, then discover the supporting tools that carry projects from wide night skies to distant wildlife.
           </p>
         </div>
 
         <div class="gear-model-layout">
           <div class="gear-model-copy">
-            <p class="gear-number">3D View / Core System</p>
-            <h3>Nikon D800 + 28–70mm f/2.8</h3>
-            <p class="gear-spec">36.3 MP full-frame body · Professional everyday zoom</p>
-            <p>
+            <p class="gear-number">3D Gear Locker / <span id="gear-counter">01 / 06</span></p>
+            <h3 id="gear-title">Nikon D800 + 28–70mm f/2.8</h3>
+            <p class="gear-spec" id="gear-spec">36.3 MP full-frame body · Professional everyday zoom</p>
+            <p id="gear-description">
               This is the foundation of my working photography kit. The D800 provides the detail and editing flexibility I need, while the 28–70mm f/2.8 covers portraits, events, documentary moments, and changing conditions in the field.
             </p>
+            <div class="gear-selector" role="group" aria-label="Choose a camera or lens" hidden>
+              <button type="button" data-gear="0" aria-pressed="true"><span>01</span> Camera + lens</button>
+              <button type="button" data-gear="1" aria-pressed="false"><span>02</span> D800 body</button>
+              <button type="button" data-gear="2" aria-pressed="false"><span>03</span> 14–24mm</button>
+              <button type="button" data-gear="3" aria-pressed="false"><span>04</span> 28–70mm</button>
+              <button type="button" data-gear="4" aria-pressed="false"><span>05</span> 70–200mm</button>
+              <button type="button" data-gear="5" aria-pressed="false"><span>06</span> 300mm</button>
+            </div>
           </div>
 
           <figure class="gear-model-shell">
@@ -214,7 +222,7 @@
               reveal="auto">
               </model-viewer>
             </div>
-            <figcaption>Nikon D800 · 3D view</figcaption>
+            <figcaption id="gear-caption" aria-live="polite">Camera + lens · 3D view</figcaption>
           </figure>
         </div>
 
@@ -274,16 +282,47 @@
       <a class="back-to-top" href="#main-content">Back to top <span aria-hidden="true">↑</span></a>
     </footer>
     <script>
+      const gearItems = [
+        { title: "Nikon D800 + 28–70mm f/2.8", spec: "36.3 MP full-frame body · Professional everyday zoom", description: "This is the foundation of my working photography kit. The D800 provides the detail and editing flexibility I need, while the 28–70mm f/2.8 covers portraits, events, documentary moments, and changing conditions in the field.", model: "/assets/servicespage/gear/d800+lens/d800-lens-web.glb", image: "/assets/servicespage/gear/d800+lens/d800+lens01.webp", label: "Camera + lens" },
+        { title: "Nikon D800", spec: "36.3 MP · Full-frame camera body", description: "The full-frame body at the heart of my photography kit, selected for its detail and flexibility in the field.", model: "/assets/servicespage/gear/d800/d800.glb", image: "/assets/servicespage/gear/d800/d80001.webp", label: "D800 body" },
+        { title: "Nikon 14–24mm", spec: "Ultra-wide zoom", description: "A wide perspective for sweeping landscapes, night skies, and spaces where the whole scene matters.", model: "/assets/servicespage/gear/14-24mm/14-24mm.glb", image: "/assets/servicespage/gear/14-24mm/14-24mm01.webp", label: "14–24mm" },
+        { title: "Nikon 28–70mm", spec: "Everyday zoom", description: "A versatile range for portraits, events, and documentary moments in changing conditions.", model: "/assets/servicespage/gear/28-70mm/25-70mm.glb", image: "/assets/servicespage/gear/28-70mm/28-70mm01.webp", label: "28–70mm" },
+        { title: "Nikon 70–200mm", spec: "Telephoto zoom", description: "A flexible telephoto perspective for action, portraits, and details farther from the camera.", model: "/assets/servicespage/gear/70-200mm/70-200mm.glb", image: "/assets/servicespage/gear/70-200mm/70-200mm01.webp", label: "70–200mm" },
+        { title: "Nikon 300mm", spec: "Telephoto lens", description: "Long reach for distant wildlife and subjects that call for a closer perspective.", model: "/assets/servicespage/gear/300mm/300mm.glb", image: "/assets/servicespage/gear/300mm/300mm01.webp", label: "300mm" }
+      ];
       const gearModel = document.querySelector(".gear-model");
-      const gearShell = gearModel?.closest(".gear-model-shell");
+      const gearShell = document.querySelector(".gear-model-shell");
+      const gearFallback = document.querySelector(".gear-model-fallback");
+      const gearSelector = document.querySelector(".gear-selector");
+      const gearButtons = gearSelector.querySelectorAll("button");
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-      gearModel?.addEventListener("load", () => {
-        gearShell?.classList.add("is-loaded");
-      });
-
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        gearModel?.removeAttribute("auto-rotate");
+      function updateGearMotion() {
+        if (reducedMotion.matches) gearModel.removeAttribute("auto-rotate");
+        else gearModel.setAttribute("auto-rotate", "");
       }
+      updateGearMotion();
+      reducedMotion.addEventListener?.("change", updateGearMotion);
+      gearModel.addEventListener("load", () => gearShell.classList.add("is-loaded"));
+      gearModel.addEventListener("error", () => gearShell.classList.remove("is-loaded"));
+
+      gearButtons.forEach((button) => button.addEventListener("click", () => {
+        const index = Number(button.dataset.gear);
+        const item = gearItems[index];
+        if (!item || button.getAttribute("aria-pressed") === "true") return;
+        gearButtons.forEach((choice) => choice.setAttribute("aria-pressed", String(choice === button)));
+        document.querySelector("#gear-counter").textContent = String(index + 1).padStart(2, "0") + " / 06";
+        document.querySelector("#gear-title").textContent = item.title;
+        document.querySelector("#gear-spec").textContent = item.spec;
+        document.querySelector("#gear-description").textContent = item.description;
+        document.querySelector("#gear-caption").textContent = item.label + " · 3D view";
+        gearShell.classList.remove("is-loaded");
+        gearFallback.src = item.image;
+        gearModel.setAttribute("poster", item.image);
+        gearModel.setAttribute("alt", "Three-dimensional model of " + item.title);
+        gearModel.setAttribute("src", item.model);
+      }));
+      gearSelector.hidden = false;
     </script>
   </body>
 </html>
