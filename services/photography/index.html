@@ -14,12 +14,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style_home.css?v=3">
-    <link rel="stylesheet" href="/style_photopage.css?v=14">
+    <link rel="stylesheet" href="/style_photopage.css?v=15">
     <script>
       self.ModelViewerElement = self.ModelViewerElement || {};
       self.ModelViewerElement.meshoptDecoderLocation = "https://cdn.jsdelivr.net/npm/meshoptimizer@0.22.0/meshopt_decoder.js";
     </script>
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js"></script>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js" onerror="window.gearViewerFailed = true; window.dispatchEvent(new Event('gear-viewer-error'))"></script>
   </head>
 
   <body>
@@ -208,6 +208,8 @@
 
           <figure class="gear-model-shell">
             <div class="gear-model-viewport">
+              <div class="gear-loading" role="status">Loading 3D view…</div>
+              <noscript><style>.gear-model-fallback { opacity: 1 !important; } .gear-loading { display: none !important; }</style></noscript>
               <img class="gear-model-fallback" src="/assets/servicespage/gear/d800+lens/d800+lens01.webp" alt="" aria-hidden="true">
               <model-viewer
               class="gear-model"
@@ -307,8 +309,27 @@
       }
       updateGearMotion();
       reducedMotion.addEventListener?.("change", updateGearMotion);
-      gearModel.addEventListener("load", () => gearShell.classList.add("is-loaded"));
-      gearModel.addEventListener("error", () => gearShell.classList.remove("is-loaded"));
+      function showGearFallback() {
+        gearShell.classList.remove("is-loaded");
+        gearShell.classList.add("is-error");
+      }
+
+      let webglAvailable = false;
+      try {
+        const canvas = document.createElement("canvas");
+        const context = canvas.getContext("webgl2") || canvas.getContext("webgl");
+        webglAvailable = Boolean(context);
+        context?.getExtension("WEBGL_lose_context")?.loseContext();
+      } catch (error) {
+        webglAvailable = false;
+      }
+      window.addEventListener("gear-viewer-error", showGearFallback);
+      gearModel.addEventListener("load", () => {
+        gearShell.classList.remove("is-error");
+        gearShell.classList.add("is-loaded");
+      });
+      gearModel.addEventListener("error", showGearFallback);
+      if (!webglAvailable || window.gearViewerFailed) showGearFallback();
 
       gearButtons.forEach((button) => button.addEventListener("click", () => {
         const index = Number(button.dataset.gear);
@@ -320,11 +341,12 @@
         document.querySelector("#gear-spec").textContent = item.spec;
         document.querySelector("#gear-description").textContent = item.description;
         document.querySelector("#gear-caption").textContent = item.label + " · 3D view";
-        gearShell.classList.remove("is-loaded");
+        gearShell.classList.remove("is-loaded", "is-error");
         gearFallback.src = item.image;
         gearModel.setAttribute("poster", item.image);
         gearModel.setAttribute("alt", "Three-dimensional model of " + item.title);
         gearModel.setAttribute("src", item.model);
+        if (!webglAvailable || window.gearViewerFailed) showGearFallback();
       }));
       gearSelector.hidden = false;
     </script>
