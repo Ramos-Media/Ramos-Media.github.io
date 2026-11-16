@@ -90,8 +90,19 @@ body {
 }
 
 .photo-grid {
-  columns: 1;
-  column-gap: clamp(12px, 1.8vw, 22px);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(12px, 1.8vw, 22px);
+}
+
+.photo-grid a {
+  aspect-ratio: 4 / 3;
+}
+
+.photo-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .photo-grid a,
@@ -105,6 +116,10 @@ body {
   border-radius: 7px;
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.24);
   break-inside: avoid;
+}
+
+.photo-grid a {
+  margin: 0;
 }
 
 .photo-grid a::after,
@@ -129,7 +144,7 @@ body {
 .panorama-section img {
   display: block;
   width: 100%;
-  height: auto;
+
   transition: transform 400ms ease, filter 250ms ease;
 }
 
@@ -230,7 +245,7 @@ body {
   }
 
   .photo-grid {
-    columns: 2;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .gallery-pager {
@@ -250,13 +265,13 @@ body {
 
 @media (min-width: 1050px) {
   .photo-grid {
-    columns: 3;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
 @media (min-width: 1650px) {
   .photo-grid {
-    columns: 4;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
