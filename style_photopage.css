@@ -459,6 +459,11 @@ body {
   height: clamp(480px, 68vw, 720px);
   --poster-color: transparent;
   background: transparent;
+  opacity: 0;
+}
+
+.gear-model-shell.is-loaded .gear-model {
+  opacity: 1;
 }
 
 .gear-model-shell figcaption {
