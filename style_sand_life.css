@@ -84,3 +84,41 @@
     gap: clamp(36px, 6vw, 90px);
   }
 }
+
+.sand-testimonial {
+  display: grid;
+  gap: clamp(24px, 4vw, 56px);
+  padding: clamp(42px, 6vw, 76px) max(22px, calc((100vw - var(--content-width)) / 2));
+  background: radial-gradient(ellipse at 85% 15%, rgba(68, 177, 225, 0.12), transparent 45%), #111c21;
+  border-block: 1px solid rgba(68, 177, 225, 0.22);
+}
+
+.sand-testimonial-heading h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.08;
+}
+
+.sand-testimonial blockquote {
+  max-width: 780px;
+  margin: 0;
+  color: #e9eff2;
+  font-size: clamp(1rem, 1.2vw, 1.12rem);
+  line-height: 1.8;
+}
+
+.sand-testimonial blockquote p {
+  margin: 0 0 1.15em;
+}
+
+.sand-testimonial blockquote footer {
+  margin-top: 1.6em;
+  color: #9edcf5;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+@media (min-width: 800px) {
+  .sand-testimonial {
+    grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.2fr);
+  }
+}
