@@ -1,0 +1,86 @@
+/* Featured project entry on the portfolio hub */
+.sand-feature {
+  display: grid;
+  gap: 0;
+  overflow: hidden;
+  margin: 0 max(22px, calc((100vw - var(--content-width)) / 2)) clamp(64px, 8vw, 104px);
+  border: 1px solid rgba(68, 177, 225, 0.32);
+  border-radius: var(--radius);
+  background: radial-gradient(circle at 90% 10%, rgba(68, 177, 225, 0.13), transparent 48%), #111b20;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+}
+
+.sand-feature-image {
+  display: block;
+  min-height: 260px;
+}
+
+.sand-feature-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  max-height: 540px;
+  object-fit: cover;
+}
+
+.sand-feature-copy {
+  align-self: center;
+  padding: clamp(28px, 5vw, 64px);
+}
+
+.sand-feature-copy h2 {
+  font-size: clamp(2rem, 4.2vw, 3.7rem);
+  line-height: 1.08;
+}
+
+.sand-feature-copy > p:not(.eyebrow) {
+  max-width: 550px;
+  color: var(--muted);
+}
+
+.sand-feature-copy .button {
+  margin-top: 16px;
+}
+
+/* Featured project page */
+.sand-hero {
+  background-image: linear-gradient(90deg, rgba(14, 14, 14, 0.82), rgba(14, 14, 14, 0.38) 65%, rgba(14, 14, 14, 0.2)), url('/portfolio_photos/sand_life/Sand-Life-Supply-Co-009.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.sand-story {
+  display: grid;
+  gap: 20px;
+  align-items: start;
+  padding: clamp(52px, 7vw, 96px) max(22px, calc((100vw - var(--content-width)) / 2));
+}
+
+.sand-story h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+.sand-story > p {
+  max-width: 680px;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.25vw, 1.12rem);
+  line-height: 1.8;
+}
+
+@media (min-width: 800px) {
+  .sand-feature {
+    grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+  }
+
+  .sand-feature-image,
+  .sand-feature-image img {
+    height: 100%;
+    min-height: 360px;
+  }
+
+  .sand-story {
+    grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.2fr);
+    gap: clamp(36px, 6vw, 90px);
+  }
+}
